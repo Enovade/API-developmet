@@ -9,7 +9,46 @@ Latihan ini adalah sambungan dari latihan [Latihan 4: Fastify Error Handling](ht
 
 # Langkah 1.0: Tetapan Routing
 
-* Wujudkan direktori baru **routes** dan pindah kan fail **app.js** di dalam direktori tersebut
+* adalah
+
+```bash
+npm i @fastify/autoload
+```
+
+* Wujudkan direktori baru **routes** dan wujudkan fail baru **routes.js** di dalam direktori tersebut
+
+* Buka fail **routes.js**, salin dan tampal kod berikut
+
+```javascript
+import fastify from 'fastify'
+
+export async function build (opts = {}) {
+  const app = fastify(opts)
+
+  app.get('/', async (request, reply) => {
+    return { hello: 'world' }
+  })
+
+  app.get('/error', async (request, reply) => {
+    throw new Error('Ralat')
+  })
+
+  app.setErrorHandler(async (err, request, reply) => {
+    request.log.error({ err })
+    reply.code(err.statusCode || 500)
+
+    return "I'm sorry, there was an error processing your request."
+  })
+
+  return app
+}
+```
+
+* Buka fail **app.js**, padam kod sediaada, salin dan tampal kod berikut
+
+```
+
+```
 
 * Buka fail **server.js**, ubah kod berikut
 
@@ -31,3 +70,30 @@ npm run dev
 ```
 
 * Buka fail **uji.http** untuk uji aplikasi
+
+# Langkah 2.0: Full Declaration Routing
+
+* Di direktori **routes** wujudkan fail
+```
+fastify.route({
+  method: 'GET',
+  url: '/',
+  schema: {
+    querystring: {
+      name: { type: 'string' },
+      excitement: { type: 'integer' }
+    },
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          hello: { type: 'string' }
+        }
+      }
+    }
+  },
+  handler: function (request, reply) {
+    reply.send({ hello: 'world' })
+  }
+})
+```
