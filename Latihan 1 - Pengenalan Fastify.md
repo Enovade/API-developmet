@@ -73,32 +73,31 @@ npm init -y
   "author": "",
   "license": "ISC"
 }
-
 ```
-* **Enable ECMAScript Modules (ESM)** di dalam projek dengan tambah kod berikut di fail **package.json**
+* Ubah maklumat **"main": "index.js"** kepada **"main": "app.js"**
 
-```
-"type": "module",
+* **Enable ECMAScript Modules (ESM)** di dalam projek dengan tambah kod berikut di akhir fail **package.json**
+
+```json
+"type": "module"
 ```
 
-* Tambah konfigurasi untuk menggunakan command **NPM RUN** dengan tambah kod berikut di **scripts** di fail **package.json** seperti contoh paparan berikut
+* Berikut adalah contoh paparan jika berjaya:
 
 ```json
 {
   "name": "latihan-1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
-
 ```
 
 # Langkah 4.0: _Install Fastify Framework_
@@ -125,18 +124,18 @@ npm i fastify
   "name": "latihan-1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "fastify": "^4.28.1"
   }
 }
-
 ```
 
 # Langkah 5.0: Penggunaan _Fastify Framework_
@@ -147,38 +146,95 @@ Langkah ini adalah untuk membangunkan API menggunakan Fastify Framework
 ```javascript
 import Fastify from 'fastify'
 
-const app = Fastify({
-  logger: true
-})
-)
+const app = Fastify()
+
 app.get('/', async (request, reply) => {
   return { hello: 'world' }
 })
-app.post('/', async (request, reply) => {
-  return request.body
-})
-app.listen({ port: 8080 })
+
+/**
+ * Run the server!
+ */
+const start = async () => {
+  try {
+    await app.listen({ port: 8080 })
+    console.log('Server listening at http://localhost:8080')
+  } catch (err) {
+    console.log(err)
+    process.exit(1)
+  }
+}
+start()
 ```
-* Simpan / (_**Save**_) fail **app.js**. Sila rujuk paparan berikut:
+* Simpan / (_**Save**_) fail **app.js**.
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/d3ea4578e7d749d9f419feaa7feef73a/image.png">
-
-# Langkah 6.0: Uji Penggunaan ExpressJS Framework
+# Langkah 6.0: Uji Penggunaan Fastify Framework
 
 * Di terminal taip kod seperti berikut:
 
 ```
-node index.js
+node app.js
 ```
 * Jika berjaya, berikut adalah paparan maklumat di terminal:
-```
-App listening on port 8080!
-```
-* Buka internet browser, dan layari **http://localhost:8080** dengan paparan berikut
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/6b34f04a0263af57eaad377c073696ce/image.png" width=400>
+```bash
+Server listening at http://localhost:8080
+```
+* Wujudkan fail **uji.http**, salin dan tampal kod berikut
+
+```
+GET http://localhost:8080
+```
+* klik **Send Request** seperti contoh paparan berikut
+
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/76ed2cf75af8d4e4b51378e38a30f76d/image.png" width=400>
+
+* Berikut adalah paparan jika berjaya
+
+```json
+{
+  "hello": "world"
+}
+```
+
+* Simpan / (_**Save**_) fail **uji.http**.
 
 * Di terminal, untuk **_stop_** applikasi NodeJS, tekan kekunci **_Ctrl-C_**
+
+# Penggunaan NPM RUN
+
+Langkah ini adalah untuk membuat konfigurasi NodeJS dengan menggunakan **command * NPM RUN**
+
+* Di fail **package.json**, tukar kod **"script"** dengan salin dan tampal kod seperti berikut
+
+```json
+"scripts": {
+  "dev": "node app.js"
+},
+```
+
+* Simpan / (_**Save**_) fail **package.json**.
+
+* Berikut adalah contoh paparan jika berjaya:
+
+```json
+{
+  "name": "latihan-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^4.28.1"
+  }
+}
+```
 
 # Langkah 7.0: Using HTTP GET / POST & JSON
 Langkah ini adalah untuk membangunkan API menggunakan _**HTTP GET / POST & JSON data**_
