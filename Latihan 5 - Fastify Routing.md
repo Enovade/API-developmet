@@ -11,4 +11,23 @@ Latihan ini adalah sambungan dari latihan [Latihan 4: Fastify Error Handling](ht
 
 * Wujudkan direktori baru **routes** dan pindah kan fail **app.js** di dalam direktori tersebut
 
-* Buka fail **app.js**, padam kod sediada, salin dan tampal kod berikut
+* Buka fail **server.js**, ubah kod berikut
+
+```
+import { build } from './app.js'
+```
+kepada
+
+```
+import { build } from './routes/app.js'
+```
+
+* Simpan / (_**Save**_) fail **server.js**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
+
+```bash
+npm run dev
+```
+
+* Buka fail **uji.http** untuk uji aplikasi
