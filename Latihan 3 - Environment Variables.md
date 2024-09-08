@@ -63,12 +63,6 @@ export async function build (opts = {}) {
 
 * Simpan / (_**Save**_) fail **app.js**.
 
-* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
-
-```bash
-npm run dev
-```
-
 * Buka fail **package.json** tukar kod "script"
 
 ```json
@@ -87,7 +81,7 @@ npm run dev
 
 * Simpan / (_**Save**_) fail **package.json**.
 
-* Wujudkan fail *.env**, salin dan tampal kod berikut
+* Wujudkan fail **.env**, salin dan tampal kod berikut
 
 ```
 PORT=8090
