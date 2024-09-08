@@ -56,8 +56,6 @@ npm run dev
 
 # Langkah 2.0: Tetapan Fastify Logging
 
-## Langkah 2.1: Pino-pretty
-
 * **Install Pino-pretty plugins** dengan taip kod berikut di **Command Prompt** atau **Terminal**
 
 ```bash
