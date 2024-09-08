@@ -71,7 +71,7 @@ npm run dev
 
 * Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
-# Langkah 2.0: Latihan Routing
+## Langkah 1.1: Latihan Routing
 
 * Wujudkan **endpoints route** baru **/salam** di fail baru **salam.js**  untuk beri maklumbalas seperti berikut
 
@@ -81,7 +81,7 @@ npm run dev
 }
 ```
 
-# Langkah 3.0: Penggunaan Autoload
+# Langkah 2.0: Penggunaan Autoload
 Langkah adalah untuk menunjukkan pemahaman menggunakan **Autoload** untuk **Fastify Framework**
 
 Sila layari https://github.com/fastify/fastify-autoload untuk maklumat lanjut
@@ -127,27 +127,57 @@ export async function build (opts = {}) {
 
 # Langkah 3.0: Full Declaration Routing
 
-* Di direktori **routes** wujudkan fail
-```
-fastify.route({
-  method: 'GET',
-  url: '/',
-  schema: {
-    querystring: {
-      name: { type: 'string' },
-      excitement: { type: 'integer' }
-    },
-    response: {
-      200: {
-        type: 'object',
-        properties: {
-          hello: { type: 'string' }
-        }
-      }
+* Buka fail **hello.js**, padam kod sediada, salin dan tampal kod berikut
+
+```javascript
+
+export default async function (app, opts = {}) {
+ 
+  // app.get('/', async (request, reply) => {
+  //   return { hello: 'world' }
+  // })
+
+  app.route({
+    method: 'GET',
+    url: '/',
+    handler: function (request, reply) {
+      reply.send({ hello: 'world' })
     }
-  },
-  handler: function (request, reply) {
-    reply.send({ hello: 'world' })
-  }
-})
+  })
+  return app
+}
 ```
+
+* Simpan / (_**Save**_) fail **hello.js**.
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 3.1: Latihan Full Declaration Routing
+
+* Ubah kod di fail **salam.js** dengan menggunakan kaedah **Full Declaration Routing**
+
+# Langkah 4.0: Shorthand Declaration Routing
+
+* Buka fail **hello.js**, padam kod sediada, salin dan tampal kod berikut
+
+```javascript
+
+export default async function (app, opts = {}) {
+ 
+  const options = {
+    handler: function (request, reply) {
+      reply.send({ hello: 'world' })
+    }
+  }
+  app.get('/', options)
+  return app
+}
+```
+
+* Simpan / (_**Save**_) fail **hello.js**.
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 4.1: Latihan Shorthand Declaration Routing
+
+* Ubah kod di fail **salam.js** dengan menggunakan kaedah **Shorthand Declaration Routing**
