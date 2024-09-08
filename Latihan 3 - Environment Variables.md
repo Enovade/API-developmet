@@ -87,6 +87,15 @@ npm run dev
 
 * Simpan / (_**Save**_) fail **package.json**.
 
+* Wujudkan fail *.env**, salin dan tampal kod berikut
+
+```
+PORT=8090
+HOST=127.0.0.1
+```
+
+* Simpan / (_**Save**_) fail **.env**.
+
 # Langkah 2.0: Exit Application gracefully
 
 Langkah ini adalah untuk menggunakan **close-with-grace plugins** untuk 
