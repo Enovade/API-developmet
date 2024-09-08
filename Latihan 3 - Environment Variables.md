@@ -96,6 +96,16 @@ HOST=127.0.0.1
 
 * Simpan / (_**Save**_) fail **.env**.
 
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
+
+```bash
+npm run dev
+```
+
+* Buka **uji.http**, uji dengan tukar port kepada **8090**
+
+* Tekan kekunci **Ctrl-C** untuk hentikan aplikasi
+
 # Langkah 2.0: Exit Application gracefully
 
 Langkah ini adalah untuk menggunakan **close-with-grace plugins** untuk 
@@ -150,4 +160,5 @@ closeWithGrace(async ({ signal, err }) => {
 ```bash
 npm run dev
 ```
+
 * Tekan kekunci **Ctrl-C** untuk uji **gracefull shutdown**
