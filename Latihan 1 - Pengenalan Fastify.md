@@ -201,9 +201,9 @@ GET http://localhost:8080
 
 * Di terminal, untuk **_stop_** applikasi NodeJS, tekan kekunci **_Ctrl-C_**
 
-# Penggunaan NPM RUN
+# Langkah 7.0: Penggunaan NPM RUN
 
-Langkah ini adalah untuk membuat konfigurasi NodeJS dengan menggunakan **command * NPM RUN**
+Langkah ini adalah untuk membuat konfigurasi NodeJS dengan menggunakan **command NPM RUN**
 
 * Di fail **package.json**, tukar kod **"script"** dengan salin dan tampal kod seperti berikut
 
@@ -236,32 +236,17 @@ Langkah ini adalah untuk membuat konfigurasi NodeJS dengan menggunakan **command
 }
 ```
 
-# Langkah 7.0: Using HTTP GET / POST & JSON
-Langkah ini adalah untuk membangunkan API menggunakan _**HTTP GET / POST & JSON data**_
+* Buka **Command Prompt**, taip kod berikut
 
-
-## Langkah 7.1: Using HTTP GET & JSON
-Langkah ini adalah untuk membangunkan API menggunakan _**HTTP GET & JSON data**_
-
-* Wujudkan fail **getjson.js**. Dari Menu, klik **_File -> New File_**
-* Salin dan tampal kod berikut
-
+```bash
+npm run dev
 ```
-const express = require('express');
-const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Salam Muafakat!');
-});
+* Berikut adalah contoh paparan jika berjaya
 
-app.get('/johor', (req, res) => {
-    res.json({ data: "Salam Muafakat" });
-});
+```bash
+> latihan-1@1.0.0 dev
+> node app.js
 
-app.listen(8080, () => {
-    console.log('App listening on port 8080!');
-});
+Server listening at http://localhost:8080
 ```
-* Simpan / (_**Save**_) fail. Sila rujuk paparan berikut:
-
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/f29dd7a41c2ab73394e67d9ee633873d/image.png">
