@@ -1,22 +1,22 @@
 [[_TOC_]]
 
-# Latihan 5: API
-Latihan ini adalah untuk menunjukkan pemahaman membangunkan API menggunakan **_ExpressJS Framework_**
+# Latihan 1: Pengenalan Fastify
+Latihan ini adalah untuk menunjukkan pemahaman membangunkan API menggunakan **_Fastify Framework_**
 
 # Langkah 1.0: _Install Visual Studio Code Extension_
-Langkah ini adalah untuk _install Express Framework_ dan _REST Client extensions_ untuk memudahkan pembangunan API
+Langkah ini adalah untuk **_install Fastify Snippets_** dan **_REST Client extensions_** untuk memudahkan pembangunan API
 
 * Di Visual Studio Code, dari senarai ikon di kiri, klik _**Extension**_
 
 <img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/25165bc1d1cd649f14bd96da890e1a44/image.png">
 
-* Buat carian, _**ExpressJs 4 Snippets**_
+* Buat carian, _**Fastify Snippets**_
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/49c4c53a495b34b47a44ac5711b43a7c/image.png">
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/7a0235b8e411376ac1c09e03317889b3/image.png" width=300>
 
-* Klik Install
+* Klik **_Install_**
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/2713f45d6fa38c7c0f584517cb8182db/image.png">
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/cafa32f842013545e96aa64928ebb7a9/image.png" width=500>
 
 * Buat carian sekali lagi, _**REST Client**_
 
@@ -24,7 +24,7 @@ Langkah ini adalah untuk _install Express Framework_ dan _REST Client extensions
 
 * Klik Install
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/c83e430e1249301217ec6e353c49cc9d/image.png">
+<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/c83e430e1249301217ec6e353c49cc9d/image.png" width=500>
 
 Note: Untuk menggunakan **REST Client**, pastikan **Code Lens** diaktifkan di **Visual Studio Code -> click Manage icon -> Settings -> Text Editor -> Enable Code Lens**
 
@@ -39,14 +39,14 @@ Nota: Untuk Windows, buka aplikasi ***Command Prompt*** dengan menggunakan **Adm
 *  Di aplikasi ***Command Prompt*** untuk Windows atau ***Terminal*** untuk MacOS
 *  Wujudkan direktori baru - latihan-5 dengan taip kod seperti berikut
 
-```
-> mkdir latihan-5
-> cd latihan-5
+```bash
+mkdir latihan-1
+cd latihan-1
 ```
 * Taip kod berikut untuk membuka aplikasi Visual Studio Code
 
-```
-> code .
+```bash
+code .
 ```
 
 # Langkah 3.0: _**Initialize**_ Persekitaran NodeJS
@@ -55,51 +55,111 @@ Langkah ini adalah untuk initialize NodeJS environment sebagai langkah pertama u
 *  Di terminal taip kod seperti berikut
 
 ```
-> npm init
+npm init -y
 ```
-* Masukkan maklumat yang di perlukan seperti paparan berikut
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/52ea822daaa484df35b92d95e2386d25/image.png">
+* Dari senarai ikon di kiri Visual Studio Code, klik ikon _**Explorer**_ untuk pastikan fail _**package.json**_ wujud dan mempunyai maklumat yang sama seperti yang dimasukkan sebelum ini. Sila rujuk contoh paparan berikut:
 
-* Dari senarai ikon di kiri Visual Studio Code, klik ikon _**Explorer**_ untuk pastikan fail _**package.json**_ wujud dan mempunyai maklumat yang sama seperti yang dimasukkan sebelum ini. Sila rujuk paparan berikut:
+```json
+{
+  "name": "latihan-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/ac4849231324d633864a5a7897f5be3d/image.png">
+```
+* **Enable ECMAScript Modules (ESM)** di dalam projek dengan tambah kod berikut di fail **package.json**
 
-# Langkah 4.0: _Install ExpressJS Framework_
-Langkah ini adalah untuk _Install ExpressJS Framework_
+```
+"type": "module",
+```
+
+* Tambah konfigurasi untuk menggunakan command **NPM RUN** dengan tambah kod berikut di **scripts** di fail **package.json** seperti contoh paparan berikut
+
+```json
+{
+  "name": "latihan-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+```
+
+# Langkah 4.0: _Install Fastify Framework_
+Langkah ini adalah untuk **_Install Fastify Framework_**
 <br>
-Sila layari https://www.npmjs.com/package/express untuk maklumat lanjut
+Sila layari https://fastify.dev/ untuk maklumat lanjut
 
 *  Di terminal taip kod seperti berikut
 
+```bash
+npm install fastify
 ```
-> npm install express
+
+atau
+
+```bash
+npm i fastify
 ```
 
-* Setelah selesai, di fail _**package.json**_, pastikan _**express**_ adalah salah satu _**dependencies**_. Sila rujuk paparan berikut:
+* Setelah selesai, di fail _**package.json**_, pastikan _**fastify**_ adalah salah satu _**dependencies**_. Sila rujuk contoh paparan berikut, versi **fastify** mungkin berbeza:
 
-<img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/2bcc6ae4766a61355f76725ef761a2cc/image.png">
+```json
+{
+  "name": "latihan-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.28.1"
+  }
+}
 
-# Langkah 5.0: Penggunaan _ExpressJS Framework_
-Langkah ini adalah untuk membangunkan API menggunakan ExpressJS Framework
-* Wujudkan fail **index.js**. Dari Menu, klik **_File -> New File_**
+```
+
+# Langkah 5.0: Penggunaan _Fastify Framework_
+Langkah ini adalah untuk membangunkan API menggunakan Fastify Framework
+* Wujudkan fail **app.js**. Dari Menu, klik **_File -> New File_**
 * Salin dan tampal kod berikut
 
+```javascript
+import Fastify from 'fastify'
+
+const app = Fastify({
+  logger: true
+})
+)
+app.get('/', async (request, reply) => {
+  return { hello: 'world' }
+})
+app.post('/', async (request, reply) => {
+  return request.body
+})
+app.listen({ port: 8080 })
 ```
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Salam Muafakat!');
-});
-
-app.listen(8080, () => {
-    console.log('App listening on port 8080!');
-});
-
-//Run app, then load http://localhost:8080 in a browser to see the output.
-```
-* Simpan / (_**Save**_) fail. Sila rujuk paparan berikut:
+* Simpan / (_**Save**_) fail **app.js**. Sila rujuk paparan berikut:
 
 <img src="https://gitlab.com/akademi-cloud-connect/johor-ict/latihan-pembangunan-aplikasi-moden/uploads/d3ea4578e7d749d9f419feaa7feef73a/image.png">
 
@@ -108,7 +168,7 @@ app.listen(8080, () => {
 * Di terminal taip kod seperti berikut:
 
 ```
-> node index.js
+node index.js
 ```
 * Jika berjaya, berikut adalah paparan maklumat di terminal:
 ```
