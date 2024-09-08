@@ -119,3 +119,28 @@ npm run dev
 [20:23:20.358] INFO (58645): Server listening at http://[::1]:8080
 [20:23:20.359] INFO (58645): Server listening at http://127.0.0.1:8080
 ```
+
+```
+GET http://localhost:8080
+```
+
+* Buka fail **uji.http**, klik **Send Request** untuk **GET http://localhost:8080**
+* Di **Command Prompt** atau **Terminal**, lihat maklumat log seperti contoh paparan berikut
+
+```
+[20:31:51.766] INFO (58645): incoming request
+    reqId: "req-1"
+    req: {
+      "method": "GET",
+      "url": "/",
+      "hostname": "localhost:8080",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 53638
+    }
+[20:31:51.776] INFO (58645): request completed
+    reqId: "req-1"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 9.794582962989807
+```
