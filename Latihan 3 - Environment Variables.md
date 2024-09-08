@@ -15,7 +15,7 @@ Latihan ini adalah sambungan dari latihan [Latihan 2: Fastify Logging](https://c
 npm i dotenv
 ```
 
-* Wujudkan fail **server.js**, padam kod sediada, salin dan tampal kod berikut
+* Wujudkan fail **server.js**, salin dan tampal kod berikut
 
 ```javascript
 import { build } from './app.js'
