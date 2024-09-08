@@ -36,8 +36,26 @@ export async function build (opts = {}) {
 }
 ```
 
-* **Install dotenv plugins** dengan taip kod berikut di **Command Prompt** atau **Terminal**
+* Simpan / (_**Save**_) fail **app.js**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
 
 ```bash
-npm i dotenv
+npm run dev
 ```
+
+* Buka **uji.http**, padam kod sediada, salin dan tampal kod berikut
+
+```
+GET http://localhost:8090
+
+###
+GET http://localhost:8090/error
+
+###
+GET http://localhost:8090/error
+
+```
+
+* Simpan / (_**Save**_) fail **uji.http**. Klik **Send Request** untuk **GET http://localhost:8090/error** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
