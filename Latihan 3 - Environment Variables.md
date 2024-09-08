@@ -92,5 +92,6 @@ npm run dev
 "scripts": {
   "dev": "node server.js"
 },
+```
 
 * Simpan / (_**Save**_) fail **package.json**.
