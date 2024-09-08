@@ -199,7 +199,7 @@ GET http://localhost:8080
 
 * Simpan / (_**Save**_) fail **uji.http**.
 
-* Di terminal, untuk **_stop_** applikasi NodeJS, tekan kekunci **_Ctrl-C_**
+* Di terminal, untuk **_stop_** aplikasi Fastify, tekan kekunci **_Ctrl-C_**
 
 # Langkah 7.0: Penggunaan NPM RUN
 
