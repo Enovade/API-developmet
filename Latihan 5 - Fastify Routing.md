@@ -81,6 +81,50 @@ npm run dev
 }
 ```
 
+# Langkah 3.0: Penggunaan Autoload
+Langkah adalah untuk menunjukkan pemahaman menggunakan **Autoload** untuk **Fastify Framework**
+
+Sila layari https://github.com/fastify/fastify-autoload untuk maklumat lanjut
+
+> Autoload is a plugin for Fastify that loads all plugins found in a directory and automatically configures routes matching the folder structure.
+
+* **Install autoload plugins** dengan taip kod berikut di **Command Prompt** atau **Terminal**
+
+```bash
+npm i @fastify/autoload
+```
+
+* Buka fail **app.js**, padam kod sediaada, salin dan tampal kod berikut
+
+```javascript
+import fastify from 'fastify'
+import autoload from '@fastify/autoload'
+import { dirname, join } from 'path'
+
+export async function build (opts = {}) {
+  const app = fastify(opts)
+
+  app.register(autoload, {
+    dir: join(dirname(new URL(import.meta.url).pathname), 'routes')
+})
+
+  app.get('/error', async (request, reply) => {
+    throw new Error('Ralat')
+  })
+
+  app.setErrorHandler(async (err, request, reply) => {
+    request.log.error({ err })
+    reply.code(err.statusCode || 500)
+
+    return "I'm sorry, there was an error processing your request."
+  })
+
+  return app
+}
+```
+* Simpan / (_**Save**_) fail **app.js**.
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
 # Langkah 3.0: Full Declaration Routing
 
 * Di direktori **routes** wujudkan fail
