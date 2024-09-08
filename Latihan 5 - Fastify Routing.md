@@ -15,19 +15,36 @@ Latihan ini adalah sambungan dari latihan [Latihan 4: Fastify Error Handling](ht
 npm i @fastify/autoload
 ```
 
-* Wujudkan direktori baru **routes** dan wujudkan fail baru **routes.js** di dalam direktori tersebut
+* Wujudkan direktori baru **routes** dan wujudkan fail baru **hello.js** di dalam direktori tersebut
 
-* Buka fail **routes.js**, salin dan tampal kod berikut
+* Buka fail **hello.js**, salin dan tampal kod berikut
+
+```javascript
+
+export default async function (app, opts = {}) {
+ 
+  app.get('/', async (request, reply) => {
+    return { hello: 'world' }
+  })
+  return app
+}
+```
+
+* Simpan / (_**Save**_) fail **hello.js**.
+
+* Buka fail **app.js**, padam kod sediaada, salin dan tampal kod berikut
 
 ```javascript
 import fastify from 'fastify'
+import hello from './routes/hello.js'
 
 export async function build (opts = {}) {
   const app = fastify(opts)
 
-  app.get('/', async (request, reply) => {
-    return { hello: 'world' }
-  })
+  app.register(hello)
+//   app.get('/', async (request, reply) => {
+//     return { hello: 'world' }
+//   })
 
   app.get('/error', async (request, reply) => {
     throw new Error('Ralat')
@@ -44,24 +61,7 @@ export async function build (opts = {}) {
 }
 ```
 
-* Buka fail **app.js**, padam kod sediaada, salin dan tampal kod berikut
-
-```
-
-```
-
-* Buka fail **server.js**, ubah kod berikut
-
-```
-import { build } from './app.js'
-```
-kepada
-
-```
-import { build } from './routes/app.js'
-```
-
-* Simpan / (_**Save**_) fail **server.js**.
+* Simpan / (_**Save**_) fail **app.js**.
 
 * Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
 
@@ -69,9 +69,19 @@ import { build } from './routes/app.js'
 npm run dev
 ```
 
-* Buka fail **uji.http** untuk uji aplikasi
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
-# Langkah 2.0: Full Declaration Routing
+# Langkah 2.0: Latihan Routing
+
+* Wujudkan **endpoints route** baru **/salam** di fail baru **salam.js**  untuk beri maklumbalas seperti berikut
+
+```json
+{
+  "data": "Salam Malaysia Madani!!!"
+}
+```
+
+# Langkah 3.0: Full Declaration Routing
 
 * Di direktori **routes** wujudkan fail
 ```
