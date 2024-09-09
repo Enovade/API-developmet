@@ -120,4 +120,7 @@ Content-Type: application/json
     "emel": "hanafiah@cloud-connect.asia"
 }
 ```
- Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Uji aplikasi dengan ubah **nama** ke **name** dan **emel** ke **email** dan lihat makumbalas di i VSCode dan **Command Prompt** atau **Terminal**
