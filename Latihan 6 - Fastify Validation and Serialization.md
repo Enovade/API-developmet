@@ -72,6 +72,29 @@ export default async function (app, opts = {}) {
         reply.send({ data: request.query.mesej })
       }
     })
+    app.route({
+        method: 'POST',
+        url: '/salam',
+        schema: {
+          body: {
+            type: 'object',
+            required: ['nama', 'emel'],
+            properties: {
+              nama: {
+                type: 'string'
+              },
+              emel: {
+                type: 'string'
+              },
+            },
+          }
+        },
+        handler: function (request, reply) {
+          const mymesej = request.body.nama + '' + request.body.emel
+          console.log(request.body)
+          reply.send({ data: mymesej })
+        }
+      })
     return app
   }
   
@@ -85,4 +108,16 @@ export default async function (app, opts = {}) {
 npm run dev
 ```
 
-* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
+
+```
+###
+POST http://localhost:8090/salam
+Content-Type: application/json
+
+{
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+}
+```
+ Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
