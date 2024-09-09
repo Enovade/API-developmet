@@ -124,3 +124,38 @@ Content-Type: application/json
 * Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 * Uji aplikasi dengan ubah **nama** ke **name** dan **emel** ke **email** dan lihat makumbalas di i VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 1.3 - Latihan PUT Validation
+
+* Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
+
+```
+###
+PUT http://localhost:8090/salam
+Content-Type: application/json
+
+{
+    "nama": "Ujian",
+    "emel": "a@a.com"
+}
+```
+
+* Klik **Send Request** untuk **PUT http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 1.4 - Latihan DELETE Validation
+
+* Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
+
+```
+###
+DELETE http://localhost:8090/salam
+Content-Type: application/json
+
+{
+    "id": "1001"
+}
+```
+
+* Klik **Send Request** untuk **DELETE http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+
