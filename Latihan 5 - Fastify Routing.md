@@ -100,13 +100,16 @@ npm i @fastify/autoload
 import fastify from 'fastify'
 import autoload from '@fastify/autoload'
 import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export async function build (opts = {}) {
   const app = fastify(opts)
 
   app.register(autoload, {
-    dir: join(dirname(new URL(import.meta.url).pathname), 'routes')
-})
+    dir: join(__dirname, 'routes')
+  })
 
   app.get('/error', async (request, reply) => {
     throw new Error('Ralat')
