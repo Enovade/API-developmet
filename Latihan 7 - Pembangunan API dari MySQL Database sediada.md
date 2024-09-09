@@ -400,7 +400,7 @@ content-type: application/json
 * Sila pastikan data yang dikemaskini tersenarai dalam database dengan membuat ujian seperti **Langkah 8.2**
 
 
-## Langkah 8.5 - Latihan DELETE API for MySQL_
+## Langkah 8.5 - Latihan _DELETE API for MySQL_
 
 * Langkah ini adalah untuk membangunkan _DELETE API for MySQL_ untuk membuang data di **table Pengguna**
 
@@ -421,7 +421,3 @@ DELETE http://localhost:8090/salam/<id data yang baru dijana>
 
 * Sila pastikan data yang dihapuskan tiada dalam senarai dengan membuat ujian seperti **Langkah 8.2**
 
-
-* Sila pastikan data **user1** sudah dibuang dengan membuat ujian seperti Langkah 13.0 
-
-* Di terminal, untuk **_stop_** applikasi NodeJS, tekan kekunci **_Ctrl-C_**
