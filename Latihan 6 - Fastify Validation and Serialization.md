@@ -131,7 +131,7 @@ Content-Type: application/json
 
 ```
 ###
-PUT http://localhost:8090/salam
+PUT http://localhost:8090/salam/1001
 Content-Type: application/json
 
 {
@@ -140,7 +140,7 @@ Content-Type: application/json
 }
 ```
 
-* Klik **Send Request** untuk **PUT http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 ## Langkah 1.4 - Latihan DELETE Validation
 
@@ -148,14 +148,10 @@ Content-Type: application/json
 
 ```
 ###
-DELETE http://localhost:8090/salam
-Content-Type: application/json
+DELETE http://localhost:8090/salam/1001
 
-{
-    "id": "1001"
-}
 ```
 
-* Klik **Send Request** untuk **DELETE http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Klik **Send Request** untuk **DELETE http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 
