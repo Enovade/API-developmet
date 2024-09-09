@@ -127,6 +127,8 @@ Content-Type: application/json
 
 ## Langkah 1.3 - Latihan PUT Validation
 
+* Ubah kod di fail **salam.js** untuk mengemaskini maklumat dengan menggunakan **PUT Request**. Gunakan **params** dan **body** untuk **schema validation**
+
 * Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
 
 ```
@@ -143,6 +145,8 @@ Content-Type: application/json
 * Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 ## Langkah 1.4 - Latihan DELETE Validation
+
+* Ubah kod di fail **salam.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation**
 
 * Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
 
