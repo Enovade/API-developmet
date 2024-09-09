@@ -7,4 +7,82 @@ Sila layari https://fastify.dev/docs/latest/Reference/Validation-and-Serializati
 
 Latihan ini adalah sambungan dari latihan [Latihan 5: Fastify Routing](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%205%20-%20Fastify%20Routing.md)
 
-# Langkah 1.0: Tetapan Routing
+# Langkah 1.0: Validation
+## Langkah 1.1: GET Validation
+
+* Buka fail **salam.js**, padam kod sediada, salin dan tampal kod berikut
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+      method: 'GET',
+      url: '/salam',
+      schema: {
+        querystring: {
+          type: 'object',
+          properties: {
+            mesej: {
+              type: 'string'
+            },
+          },
+        }
+      },
+      handler: function (request, reply) {
+        reply.send({ data: request.query.mesej })
+      }
+    })
+    return app
+  }
+  
+```
+
+* Simpan / (_**Save**_) fail **salam.js**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
+
+```bash
+npm run dev
+```
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+
+## Langkah 1.2: POST Validation
+
+* Buka fail **salam.js**, padam kod sediada, salin dan tampal kod berikut
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+      method: 'GET',
+      url: '/salam',
+      schema: {
+        querystring: {
+          type: 'object',
+          properties: {
+            mesej: {
+              type: 'string'
+            },
+          },
+        }
+      },
+      handler: function (request, reply) {
+        reply.send({ data: request.query.mesej })
+      }
+    })
+    return app
+  }
+  
+```
+
+* Simpan / (_**Save**_) fail **salam.js**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
+
+```bash
+npm run dev
+```
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
