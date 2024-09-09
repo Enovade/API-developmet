@@ -127,7 +127,7 @@ Content-Type: application/json
 
 ## Langkah 1.3 - Latihan PUT Validation
 
-* Ubah kod di fail **salam.js** untuk mengemaskini maklumat dengan menggunakan **PUT Request**. Gunakan **params** dan **body** untuk **schema validation**
+* Ubah kod di fail **salam.js** untuk mengemaskini maklumat dengan menggunakan **PUT Request**. Gunakan **params** dan **body** untuk **schema validation** dan **{ data: "Maklumat berjaya dikemaskini" }** untuk maklumbalas.
 
 * Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
 
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ## Langkah 1.4 - Latihan DELETE Validation
 
-* Ubah kod di fail **salam.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation**
+* Ubah kod di fail **salam.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
 
 * Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
 
@@ -159,3 +159,74 @@ DELETE http://localhost:8090/salam/1001
 * Klik **Send Request** untuk **DELETE http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 
+# Langkah 2.0: Serialization
+## Langkah 2.1: GET Serialization
+
+* Buka fail **salam.js**, padam kod sediada, salin dan tampal kod berikut
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+      method: 'GET',
+      url: '/salam',
+      schema: {
+        querystring: {
+          type: 'object',
+          properties: {
+            mesej: {
+              type: 'string'
+            },
+          },
+          required: ['mesej']
+        },
+        response: {
+          200: {
+            type: 'object',
+            properties: {
+              data: { 
+                type: 'string' 
+              }
+            },
+            required: ['data']
+          }
+        }
+      },
+      handler: function (request, reply) {
+        reply.send({ data: request.query.mesej })
+      }
+    })
+    return app
+  }
+  
+```
+
+* Simpan / (_**Save**_) fail **salam.js**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Fastify**
+
+```bash
+npm run dev
+```
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Klik **Send Request** untuk **GET http://localhost:8090/salam?maklumat=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal** 
+
+## Langkah 2.2 - Latihan POST Serialization
+
+* Ubah kod di fail **salam.js** untuk **Schema Response POST Serialization** dengan **{ data: "Maklumat berjaya diwujudkan" }** sebagai maklumbalas.
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 2.3 - Latihan PUT Serialization
+
+* Ubah kod di fail **salam.js** untuk **Schema Response PUT Serialization** dan **{ data: "Maklumat berjaya dikemaskini" }** untuk maklumbalas.
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+## Langkah 2.4 - Latihan DELETE Serialization
+
+* Ubah kod di fail **salam.js** untuk **Schema Response DELETE Serialization** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
+
+* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **DELETE http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
