@@ -13,18 +13,11 @@ Latihan ini adalah untuk menunjukkan pemahaman membangunkan aplikasi web atau we
 
 ## Langkah 1.2: Wujudkan Direktori Projek
 *  Di aplikasi ***Command Prompt*** untuk Windows atau ***Terminal*** untuk MacOS
-*  Wujudkan direktori baru - latihan-11
+*  Wujudkan direktori baru - **latihan-10.1**
 
 ```
-> mkdir latihan-11
-> cd latihan-11
-```
-
-*  Wujudkan direktori baru - latihan-1 di dalam latihan-11
-
-```
-> mkdir latihan-1
-> cd latihan-1
+> mkdir latihan-10.1
+> cd latihan-10.1
 ```
 
 * Taip kod berikut untuk membuka aplikasi Visual Studio Code
