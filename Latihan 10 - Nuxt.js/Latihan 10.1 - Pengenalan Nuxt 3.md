@@ -39,7 +39,7 @@ Langkah ini adalah untuk _**install Vue - Official extension**_ untuk memudahkan
 * Di Visual Studio Code, dari senarai ikon di kiri, klik _**Extension**_
 * Buat carian, _**Vue - Official**_ dan klik **Install** seperti contoh paparan berikut
 
-<img src="/uploads/ef10b95e95a5615b4cb178b1ce5f6484/image.png" width=450>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/ef10b95e95a5615b4cb178b1ce5f6484/image.png" width=450>
 
 # Langkah 3: Wujudkan aplikasi Nuxt 3
 Langkah ini adalah untuk wujudkan aplikasi Nuxt 3
@@ -85,7 +85,7 @@ npm run dev -- -o
 
 * Berikut adalah contoh paparan di browser jika berjaya
 
-<img src="/uploads/87a5b303a6ff8434d3d58390249a5ba6/image.png" width=550>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/87a5b303a6ff8434d3d58390249a5ba6/image.png" width=550>
 
 * Buka aplikasi **Command Prompt** baru, taip kod berikut unktu buka projek **mynuxt** dengan **VS Code**
 
@@ -94,6 +94,6 @@ code .
 ```
 > Instructor to explain Nuxt structure from Visual Studio Code
 
-<img src="/uploads/c36a54c85bea905f4e9d7b65f4bea395/image.png" width=550>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/c36a54c85bea905f4e9d7b65f4bea395/image.png" width=550>
 
 * Di aplikasi **Command Prompt**, taip **CTRL-C** untuk hentikan aplikasi.
