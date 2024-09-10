@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# Latihan 2: Nuxt UI Framework
+# Latihan 10.2: Nuxt UI Framework
 Latihan ini adalah untuk menunjukkan penggunaan **Flowbite - a TailwindCSS based UI Framework**. 
 
 Untuk maklumat lanjut boleh layari https://flowbite.com/
@@ -8,11 +8,11 @@ Untuk maklumat lanjut boleh layari https://flowbite.com/
 # Langkah 1.0: Penyediaan Persekitaran Projek
 
 *  Di aplikasi ***Command Prompt*** untuk Windows atau ***Terminal*** untuk MacOS
-*  Wujudkan direktori baru - **latihan-2** di dalam Projek **Latihan-11**
+*  Wujudkan direktori baru - **latihan-10.2** di dalam Projek **Latihan-10**
 
 ```
-mkdir latihan-2
-cd latihan-2
+mkdir latihan-10.2
+cd latihan-10.2
 ```
 
 * Taip kod seperti berikut untuk wujudkan aplikasi **Nuxt 3**
