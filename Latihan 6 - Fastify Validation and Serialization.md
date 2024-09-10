@@ -152,6 +152,44 @@ Content-Type: application/json
 
 * Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
+* Berikut adalah contoh kod
+
+```javascript
+
+app.route({
+      method: 'PUT',
+      url: '/salam/:id',
+      schema: {
+        params: {
+          type: 'object',
+          required: ['id'],
+          properties: {
+            id: {
+              type: 'integer'
+            },
+          },
+        },
+        body: {
+          type: 'object',
+          required: ['nama', 'emel'],
+          properties: {
+            nama: {
+              type: 'string'
+            },
+            emel: {
+              type: 'string'
+            },
+          },
+        }
+      },
+      handler: function (request, reply) {
+        console.log(request.body)
+        console.log(request.params)
+        reply.send({data: "Maklumat berjaya dikemaskini" })
+      }
+    })
+```
+
 ## Langkah 1.4 - Latihan DELETE Validation
 
 * Ubah kod di fail **salam.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
@@ -233,43 +271,6 @@ npm run dev
 
 * Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
-* Berikut adalah contoh kod
-
-```javascript
-
-app.route({
-      method: 'PUT',
-      url: '/salam/:id',
-      schema: {
-        params: {
-          type: 'object',
-          required: ['id'],
-          properties: {
-            id: {
-              type: 'integer'
-            },
-          },
-        },
-        body: {
-          type: 'object',
-          required: ['nama', 'emel'],
-          properties: {
-            nama: {
-              type: 'string'
-            },
-            emel: {
-              type: 'string'
-            },
-          },
-        }
-      },
-      handler: function (request, reply) {
-        console.log(request.body)
-        console.log(request.params)
-        reply.send({data: "Maklumat berjaya dikemaskini" })
-      }
-    })
-```
 
 ## Langkah 2.4 - Latihan DELETE Serialization
 
