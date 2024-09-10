@@ -16,14 +16,14 @@ Latihan ini adalah untuk menunjukkan pemahaman membangunkan aplikasi web atau we
 *  Wujudkan direktori baru - **latihan-10.1**
 
 ```
-> mkdir latihan-10.1
-> cd latihan-10.1
+mkdir latihan-10.1
+cd latihan-10.1
 ```
 
 * Taip kod berikut untuk membuka aplikasi Visual Studio Code
 
 ```
-> code .
+code .
 ```
 
 # Langkah 2.0: _Install Visual Studio Code Extension_
