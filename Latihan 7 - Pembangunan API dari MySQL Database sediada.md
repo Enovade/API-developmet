@@ -431,23 +431,12 @@ app.route({
             type: 'string'
             },
         },
-        },
-        response: {
-        200: {
-            type: 'object',
-            properties: {
-            data: { 
-                type: 'string' 
-            }
-            },
-            required: ['data']
-        }
         }
     },
     handler: async function (request, reply) {
         const jawapan = await prisma.pengguna.update({ where: { id: request.params.id } , data: request.body })
-      
-        reply.send({data: "Maklumat berjaya dikemaskini" })
+        console.log(jawapan)
+        reply.send(jawapan)
     }
     })
 
