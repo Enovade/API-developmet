@@ -133,7 +133,7 @@ npm run dev
 
 ## Langkah 2.2: Uji Laman Daftar
 
-* * Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
+* Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
 
 ```
 npm run dev
