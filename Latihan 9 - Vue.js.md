@@ -8,14 +8,14 @@ Latihan ini adalah untuk menunjukkan pemahaman membangunkan aplikasi web atau we
 *  Wujudkan direktori baru - **latihan-9**
 
 ```
-> mkdir latihan-9
-> cd latihan-9
+mkdir latihan-9
+cd latihan-9
 ```
 
 * Taip kod berikut untuk membuka aplikasi Visual Studio Code
 
 ```
-> code .
+code .
 ```
 
 # Langkah 2.0: _Install Visual Studio Code Extension_
@@ -43,7 +43,7 @@ Langkah ini adalah untuk _install Vue CLI (Command Line Interface)_ sebagai lang
 *  Di ***Command Prompt*** atau **Visual Studio Code terminal** taip kod seperti berikut
 
 ```
-> npm create vue@latest
+npm create vue@latest
 ```
 
 * Untuk soalan **Ok to proceed? (y)**, taip **y**
