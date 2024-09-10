@@ -141,5 +141,4 @@ npm run dev
 
 * Di browser layari pautan berikut **http://localhost:3000/daftar**, berikut adalah contoh paparan
 
-
-
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/d77249cc699249a765a54a0cb4a54837/image.png" width=400>
