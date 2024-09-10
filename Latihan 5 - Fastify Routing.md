@@ -81,24 +81,6 @@ npm run dev
 }
 ```
 
-* Berikut adalah contoh kod
-
-```javascript
-export default async function (app, opts = {}) {
- 
-    app.route({
-      method: 'GET',
-      url: '/salam',
-      handler: function (request, reply) {
-        reply.send({ data: 'Salam Malaysia Madani!!!' })
-      }
-    })
-
-    return app
-  }
-  
-```
-
 # Langkah 2.0: Penggunaan Autoload
 Langkah adalah untuk menunjukkan pemahaman menggunakan **Autoload** untuk **Fastify Framework**
 
@@ -176,6 +158,24 @@ export default async function (app, opts = {}) {
 ## Langkah 3.1: Latihan Full Declaration Routing
 
 * Ubah kod di fail **salam.js** dengan menggunakan kaedah **Full Declaration Routing**
+
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+      method: 'GET',
+      url: '/salam',
+      handler: function (request, reply) {
+        reply.send({ data: 'Salam Malaysia Madani!!!' })
+      }
+    })
+
+    return app
+  }
+  
+```
 
 # Langkah 4.0: Shorthand Declaration Routing
 
