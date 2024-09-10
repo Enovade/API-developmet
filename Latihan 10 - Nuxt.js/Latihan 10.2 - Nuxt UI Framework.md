@@ -56,7 +56,7 @@ npm run dev -- -o
 
 * Berikut adalah contoh paparan di browser jika berjaya
 
-<img src="/uploads/87a5b303a6ff8434d3d58390249a5ba6/image.png" width=550>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/87a5b303a6ff8434d3d58390249a5ba6/image.png" width=550>
 
 * Buka aplikasi **Command Prompt** baru. Taip kod berikut unktu buka projek **mynuxt** dengan **VS Code**
 
@@ -65,7 +65,7 @@ code .
 ```
 > Instructor to explain Nuxt structure from Visual Studio Code
 
-<img src="/uploads/c36a54c85bea905f4e9d7b65f4bea395/image.png" width=550>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/c36a54c85bea905f4e9d7b65f4bea395/image.png" width=550>
 
 * Di aplikasi **Command Prompt**, taip **CTRL-C** untuk hentikan aplikasi.
 
@@ -139,7 +139,7 @@ npm run dev -- -o
 
 * Berikut adalah contoh paparan di browser jika berjaya
 
-<img src="/uploads/c6ec5b2a755b211b80cc090196fe5c5e/image.png" width=550>
+<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/c6ec5b2a755b211b80cc090196fe5c5e/image.png" width=550>
 
 # Langkah 3.0: Tetapan icons
 
