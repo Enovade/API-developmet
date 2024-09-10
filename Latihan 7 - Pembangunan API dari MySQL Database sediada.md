@@ -466,3 +466,62 @@ DELETE http://localhost:8090/salam/<id data yang baru dijana>
 
 * Sila pastikan data yang dihapuskan tiada dalam senarai dengan membuat ujian seperti **Langkah 8.2**
 
+## Latihan 8.6 - API untuk carian Pengguna
+
+* Berikut adalah contoh kod
+
+```javascript
+import { PrismaClient }  from '@prisma/client';
+const prisma = new PrismaClient();
+
+export default async function (app, opts = {}) {
+ 
+  // READ API
+  app.route({
+    method: 'GET',
+    url: '/pengguna',
+    handler: async function (request, reply) {
+      const jawapan = await prisma.pengguna.findMany();
+      reply.send(jawapan)
+    }
+  })
+
+  app.route({
+    method: 'GET',
+    url: '/pengguna/cari/:nama',
+    handler: async function (request, reply) {
+      let username = request.params.nama
+      const jawapan = await prisma.pengguna.findUnique({
+            where: {
+            nama: username,
+            },
+        })
+
+      reply.send(jawapan)
+    }
+  })
+
+
+  app.route({
+    method: 'GET',
+    url: '/pengguna/contains/:nama',
+    handler: async function (request, reply) {
+        let searchname = request.params.nama
+        const jawapan = await prisma.pengguna.findMany({
+            where: {
+              nama: {
+                contains: searchname,
+              },
+            },
+        })
+
+      reply.send(jawapan)
+    }
+  })
+
+
+
+  return app
+}
+
+```
