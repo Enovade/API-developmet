@@ -10,7 +10,7 @@ Latihan ini adalah sambungan dari latihan [Latihan 10.1: Pengenalan Nuxt 3](http
 # Langkah 1.0: Penggunaan Flowbite TailwindCSS UI Framework
 Langkah ini adalah untuk menggunakan **Flowbite** sebagai **UI Framework**
 
-## Langkah 2.1: Tetapan TailwindCSS
+## Langkah 1.1: Tetapan TailwindCSS
 
 * Di **Command Prompt** atau **Terminal**, taip kod berikut
 
@@ -81,14 +81,14 @@ npm run dev
 
 * Uji dengan layari laman **http://localhost:3000**
 
-## Langkah 2.2: Tetapan Flowbite
+## Langkah 1.2: Tetapan Flowbite
 
 Sila rujuk pautan ini untuk rujukan tetapan [https://flowbite.com/docs/getting-started/nuxt-js/](https://flowbite.com/docs/getting-started/nuxt-js/)
 
-* Di terminal Visual Studio Code, taip kod seperti berikut untuk **install bootstrap and bootstrap-vue-next**
+* Di **Command Prompt** atau **Terminal**, taip kod berikut
 
 ```bash
-> npm i bootstrap bootstrap-vue-next @bootstrap-vue-next/nuxt -D
+npm install flowbite
 ```
 
 * Pastikan kesemua components yang sudah di**install** tersenarai di fail **package.json** seperti contoh paparan berikut
@@ -106,92 +106,68 @@ Sila rujuk pautan ini untuk rujukan tetapan [https://flowbite.com/docs/getting-s
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.12.4",
-    "vue": "latest"
-  },
-  "devDependencies": {
-    "@bootstrap-vue-next/nuxt": "^0.24.9",
-    "bootstrap": "^5.3.3",
-    "bootstrap-vue-next": "^0.24.9"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "flowbite": "^2.5.1",
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest"
   }
+}
+```
+
+* Buka fail **tailwind.config.ts**, padam kod sedia ada , salin dan tampal kod berikut
+
+```ts
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./node_modules/flowbite/**/*.{js,ts}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
 
 ```
+* Simpan / (_**Save**_) fail **tailwind.config.ts**.
 
-## Langkah 2.2: Konfigurasi nuxt.config.ts
+* Buka fail **nuxt.config.ts**, padam kod sedia ada , salin dan tampal kod berikut
 
-* Buka fail **nuxt.config.ts**, padamkan semua kod, salin dan tampal kod berikut 
-
-```
+```ts
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js',
+          type: 'text/javascript',
+          defer: true
+        }
+      ]
+    }
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@bootstrap-vue-next/nuxt'],
-  css: ['bootstrap/dist/css/bootstrap.min.css'],
+  css: ['~/assets/css/main.css'],
+  modules: ["@nuxtjs/tailwindcss"]
 })
-```
-
-* Simpan / **(Save)** fail **nuxt.config.ts**.
-
-* Taip kod berikut untuk buka aplikasi Nuxt 3
 
 ```
+
+* Simpan / (_**Save**_) fail **nuxt.config.ts**.
+
+* Di **Command Prompt** atau **Terminal**, taip kod berikut untuk mulakan aplikasi **Nuxt 3**
+
+```bash
 npm run dev
-
-```
-atau
-
-```
-npm run dev -- -o
 ```
 
-* Berikut adalah contoh paparan di browser jika berjaya
+* Uji dengan layari laman **http://localhost:3000**
 
-<img src="https://code.cloud-connect.asia/msp/akademi-cloud-connect/training-modules/pembangunan-aplikasi-moden/uploads/c6ec5b2a755b211b80cc090196fe5c5e/image.png" width=550>
-
-# Langkah 3.0: Tetapan icons
-
-Sila rujuk pautan ini untuk **Nuxt Icon** [https://nuxt.com/modules/icon](https://nuxt.com/modules/icon) 
-
-* Di terminal Visual Studio Code, taip kod seperti berikut untuk **install Nuxt Icons**
-
-```bash
-> npx nuxi module add icon
-```
-
-* Taip kod berikut untuk **install Material Design Icons** [https://icon-sets.iconify.design/mdi/](https://icon-sets.iconify.design/mdi/)
-
-```bash
-> npm i -D @iconify-json/mdi
-```
+* Di browser klik **Shift + Option + D** untuk buka paparan **Devtools**
 
 
-
-* Pastikan **icon libraries** tersenarai di fail **package.json** seperti contoh paparan berikut
-
-```json
-{
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxt/icon": "^1.4.7",
-    "nuxt": "^3.12.4",
-    "vue": "latest"
-  },
-  "devDependencies": {
-    "@bootstrap-vue-next/nuxt": "^0.24.9",
-    "@iconify-json/mdi": "^1.1.68",
-    "bootstrap": "^5.3.3",
-    "bootstrap-vue-next": "^0.24.9"
-  }
-}
-```
