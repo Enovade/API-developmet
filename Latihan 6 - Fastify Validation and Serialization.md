@@ -290,11 +290,112 @@ npm run dev
 
 * Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:8090/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+        method: 'POST',
+        url: '/salam',
+        schema: {
+          body: {
+            type: 'object',
+            required: ['nama', 'emel'],
+            properties: {
+              nama: {
+                type: 'string'
+              },
+              emel: {
+                type: 'string'
+              },
+            },
+          },
+          response: {
+            200: {
+              type: 'object',
+              properties: {
+                data: { 
+                  type: 'string' 
+                }
+              },
+              required: ['data']
+            }
+          }
+        },
+        handler: function (request, reply) {
+          const mymesej = request.body.nama + ' ' + request.body.emel
+          console.log(request.body)
+          reply.send({ data: mymesej })
+        }
+      })
+    return app
+  }
+  
+```
+
 ## Langkah 2.3 - Latihan PUT Serialization
 
 * Ubah kod di fail **salam.js** untuk **Schema Response PUT Serialization** dan **{ data: "Maklumat berjaya dikemaskini" }** untuk maklumbalas.
 
 * Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+        method: 'PUT',
+        url: '/salam/:id/:nama',
+        schema: {
+          params: {
+            type: 'object',
+            required: ['id'],
+            properties: {
+              id: {
+                type: 'integer'
+              },
+              nama: {
+                type: 'string'
+              },
+            },
+          },
+          body: {
+            type: 'object',
+            required: ['nama', 'emel'],
+            properties: {
+              nama: {
+                type: 'string'
+              },
+              emel: {
+                type: 'string'
+              },
+            },
+          },
+          response: {
+            200: {
+              type: 'object',
+              properties: {
+                data: { 
+                  type: 'string' 
+                }
+              },
+              required: ['data']
+            }
+          }
+        },
+        handler: function (request, reply) {
+          console.log(request.body)
+          console.log(request.params)
+          reply.send({data: "Maklumat berjaya dikemaskini" })
+        }
+      })
+
+    return app
+  }
+  
+```
 
 
 ## Langkah 2.4 - Latihan DELETE Serialization
@@ -302,3 +403,45 @@ npm run dev
 * Ubah kod di fail **salam.js** untuk **Schema Response DELETE Serialization** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
 
 * Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **DELETE http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+        method: 'DELETE',
+        url: '/salam/:id',
+        schema: {
+          params: {
+            type: 'object',
+            required: ['id'],
+            properties: {
+              id: {
+                type: 'integer'
+              }
+            },
+          },
+          response: {
+            200: {
+              type: 'object',
+              properties: {
+                data: { 
+                  type: 'string' 
+                }
+              },
+              required: ['data']
+            }
+          }
+        },
+        handler: function (request, reply) {
+          console.log(request.params)
+          reply.send({data: "Maklumat berjaya dihapuskan" })
+        }
+      })
+    
+    return app
+  }
+  
+
+```
