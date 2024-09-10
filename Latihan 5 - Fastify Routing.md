@@ -202,3 +202,20 @@ export default async function (app, opts = {}) {
 ## Langkah 4.1: Latihan Shorthand Declaration Routing
 
 * Ubah kod di fail **salam.js** dengan menggunakan kaedah **Shorthand Declaration Routing**
+
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+
+    const options = {
+      handler: function (request, reply) {
+        reply.send({ data: 'Salam Malaysia Madani!!!' })
+      }
+    }
+    app.get('/salam', options)
+
+    return app
+  }
+  
+```
