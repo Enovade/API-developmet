@@ -399,6 +399,62 @@ content-type: application/json
 
 * Sila pastikan data yang dikemaskini tersenarai dalam database dengan membuat ujian seperti **Langkah 8.2**
 
+* Berikut adalah contoh kod
+
+```javascript
+import { PrismaClient }  from '@prisma/client';
+const prisma = new PrismaClient();
+
+export default async function (app, opts = {}) {
+ 
+app.route({
+    method: 'PUT',
+    url: '/pengguna/:id',
+    schema: {
+        params: {
+        type: 'object',
+        required: ['id'],
+        properties: {
+          id: {
+            type: 'integer'
+          }
+        },
+        },
+        body: {
+        type: 'object',
+        required: ['alamat', 'email'],
+        properties: {
+            alamat: {
+            type: 'string'
+            },
+            email: {
+            type: 'string'
+            },
+        },
+        },
+        response: {
+        200: {
+            type: 'object',
+            properties: {
+            data: { 
+                type: 'string' 
+            }
+            },
+            required: ['data']
+        }
+        }
+    },
+    handler: async function (request, reply) {
+        const jawapan = await prisma.pengguna.update({ where: { id: request.params.id } , data: request.body })
+      
+        reply.send({data: "Maklumat berjaya dikemaskini" })
+    }
+    })
+
+  return app
+}
+
+```
 
 ## Langkah 8.5 - Latihan _DELETE API for MySQL_
 
