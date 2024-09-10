@@ -525,3 +525,18 @@ export default async function (app, opts = {}) {
 }
 
 ```
+
+* Tambah kod berikut di **uij.http**
+
+```
+###
+GET http://localhost:8090/pengguna
+
+
+###
+GET http://localhost:8090/pengguna/cari/hanafiah
+
+
+###
+GET http://localhost:8090/pengguna/contains/mam
+```
