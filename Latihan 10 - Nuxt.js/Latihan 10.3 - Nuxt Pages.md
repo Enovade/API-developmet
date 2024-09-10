@@ -109,7 +109,18 @@ npx nuxi add page pengguna
 
 * Buka fail **pengguna.vue** yang baru diwujudkan, tukar maklumat **Page: index** kepada **Senarai Pengguna**, seperti contoh paparan berikut
 
-<img src="https://code.cloud-connect.asia/Hanafiah/mindef-latihan-cloud-native/uploads/c719f036cc48791db05a7a7f24540f4e/image.png" width=550>
+```vue
+<script setup lang="ts"></script>
+
+<template>
+  <div>
+    Senarai Pengguna
+  </div>
+</template>
+
+<style scoped></style>
+
+```
 
 * Simpan / **Save** fail **pengguna.vue**
 
@@ -139,7 +150,18 @@ npx nuxi add page login
 
 * Buka fail **login.vue** yang baru diwujudkan, tukar maklumat **Page: index** kepada **Laman Login**, seperti contoh paparan berikut
 
-<img src="https://code.cloud-connect.asia/Hanafiah/mindef-latihan-cloud-native/uploads/3f19f582ab5965ff831cdc9ada363139/image.png" width=550>
+```vue
+<script setup lang="ts"></script>
+
+<template>
+  <div>
+    Laman Login
+  </div>
+</template>
+
+<style scoped></style>
+
+```
 
 * Simpan / **Save** fail **login.vue**
 
@@ -242,44 +264,3 @@ npm run dev -- -o
 
 * Di browser layari pautan berikut **http://localhost:3000/**, **http://localhost:3000/daftar**, **http://localhost:3000/pengguna** dan **http://localhost:3000/login**. Pastikan **Page Title** wujud untuk setiap laman.
 
-# Langkah 3.0: Penggunaan Nuxt Icon
-Langkah ini adalah untuk menunjukkan pengunaan **Nuxt Icon**. Sila rujuk pautan **Nuxt Icon** [https://nuxt.com/modules/icon](https://nuxt.com/modules/icon)
-
-* Buka fail **index.vue**, padam kod sediada, salin dan tampal kod berikut
-
-```
-<script lang="ts" setup></script>
-
-<template>
-  <div>
-    <Head>
-      <Title>Utama</Title>
-    </Head>
-    <div class="mt-4 p-5 bg-info text-white rounded">
-      <h1>Salam Malaysia Madani</h1>
-      <h2>Portal Latihan Cloud Native</h2>
-      <p>Untuk maklumat lanjut sila buat pendaftaran</p>
-      <BButton variant="outline-primary"><Icon name="mdi:square-edit-outline" size="1.5em" />&nbsp;Daftar</BButton>
-    </div>
-  </div>
-</template>
-
-<style scoped></style>
-```
-Nota:
-```
-<Icon name="mdi:square-edit-outline" size="1.5em" />
-```
-* **mdi** adalah merujuk kepada **Material Design Icons** [https://icon-sets.iconify.design/mdi/](https://icon-sets.iconify.design/mdi/) dan [https://icon-sets.iconify.design/mdi/square-edit-outline/](https://icon-sets.iconify.design/mdi/square-edit-outline/)
-
-* Simpan / **Save** fail **index.vue**
-
-* Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
-
-```
-npm run dev
-```
-
-* Di browser layari pautan berikut **http://localhost:3000/** seperti contoh paparan berikut
-
-<img src="/uploads/32f0ae5a1c744f4502e689a23c46c6d0/image.png" width=550>
