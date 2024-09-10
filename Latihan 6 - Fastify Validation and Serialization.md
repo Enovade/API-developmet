@@ -45,7 +45,15 @@ export default async function (app, opts = {}) {
 npm run dev
 ```
 
-* Buka fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Buka fail **uji.http** untuk uji aplikasi. Salin dan tampal kod berikut di akhir fail
+
+```
+###
+GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani
+
+```
+
+* Klik **Send Request** untuk **GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 
 ## Langkah 1.2: POST Validation
