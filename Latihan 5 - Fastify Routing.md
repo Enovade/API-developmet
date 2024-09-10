@@ -81,6 +81,24 @@ npm run dev
 }
 ```
 
+* Berikut adalah contoh kod
+
+```javascript
+export default async function (app, opts = {}) {
+ 
+    app.route({
+      method: 'GET',
+      url: '/salam',
+      handler: function (request, reply) {
+        reply.send({ data: 'Salam Malaysia Madani!!!' })
+      }
+    })
+
+    return app
+  }
+  
+```
+
 # Langkah 2.0: Penggunaan Autoload
 Langkah adalah untuk menunjukkan pemahaman menggunakan **Autoload** untuk **Fastify Framework**
 
