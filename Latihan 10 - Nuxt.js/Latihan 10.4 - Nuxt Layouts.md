@@ -46,87 +46,96 @@ npx nuxi add layout default
 
 * Berikut adalah contoh paparan jika berjaya
 
-<img src="https://code.cloud-connect.asia/Hanafiah/mindef-latihan-cloud-native/uploads/46169695f1c5b0757bf61e037eb781ba/image.png" width=550>
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/f77f44ba44a55b54d743a07f551d9a7b/image.png" width=550>
 
-* Pastikan juga di pautan **http://localhost:3000/daftar** dan **http://localhost:3000/pengguna** terdapat **Layout: default** di paparan.
+* Pastikan juga di pautan **http://localhost:3000/daftar**, **http://localhost:3000/pengguna** dan **http://localhost:3000/login** terdapat **Layout: default** di paparan.
 
 ## Langkah 2.2: Konfigurasi untuk tiada **layouts**
 
 * Buka fail **login.vue** di direktori **pages**, padam maklumat sedia ada, salin dan tampal kod berikut
 
 ```
-<script lang="ts" setup>
-definePageMeta({
-  layout: false,
-});
+<script setup lang="ts">
+  definePageMeta({
+    layout: false,
+  });
 </script>
 
 <template>
   <div>
-    <Head>
-      <Title>Login</Title>
-    </Head>
     Laman Login
   </div>
 </template>
 
-
 <style scoped></style>
+
 ```
-* Simpan / **Save** fail **app.vue**
+* Simpan / **Save** fail **login.vue**
 
-* Di browser layari pautan berikut **http://localhost:3000/login**. Pastikan tidak terdapat **Layout: default** di paparan
-
-* Berikut adalah contoh paparan jika berjaya
-
-<img src="https://code.cloud-connect.asia/Hanafiah/mindef-latihan-cloud-native/uploads/b0c5ba2ebf258c9f0466df777405bbae/image.png" width=550>
+* Di browser layari pautan berikut **http://localhost:3000/login**. Pastikan **tidak** terdapat **Layout: default** di paparan.
 
 # Langkah 3.0: **Navigation Bar Layouts**
 
-Sila rujuk pautan ini untuk **Navigation Bar Components** [https://bootstrap-vue-next.github.io/bootstrap-vue-next/docs/components/navbar.html](https://bootstrap-vue-next.github.io/bootstrap-vue-next/docs/components/navbar.html) 
+Sila rujuk pautan ini untuk **Navigation Bar Components** [https://flowbite.com/blocks/e-commerce/navbars/](https://flowbite.com/blocks/e-commerce/navbars/) 
 
 * Buka fail **default.vue** di direktori **layouts**, padam maklumat sedia ada, salin dan tampal kod berikut
 
-```
+```vue
 <script setup lang="ts"></script>
 
 <template>
   <div>
-    <BNavbar toggleable="sm" variant="primary" v-b-color-mode="'dark'">
-      <BNavbarToggle target="nav-text-collapse" />
-      <BNavbarBrand><Icon name="mdi:graph-box-outline" ></Icon></BNavbarBrand>
-      <BCollapse id="nav-text-collapse" is-nav>
-        <BNavbarNav>
-          <BNavItem>
-            <NuxtLink to="/">
-              <a>Utama</a>
-            </NuxtLink>
-          </BNavItem>
-          <BNavItem >
-            <NuxtLink to="/daftar">
-              <a>Daftar</a>
-            </NuxtLink>
-          </BNavItem>
-          <BNavItem >
-            <NuxtLink to="/pengguna">
-              <a>Pengguna</a>
-            </NuxtLink>
-          </BNavItem>
-          <BNavItem >
-            <NuxtLink to="/login">
-              <a>Login</a>
-            </NuxtLink>
-          </BNavItem>
-        </BNavbarNav>
-      </BCollapse>
-    </BNavbar>
+    <nav class="bg-white dark:bg-gray-800 antialiased">
+      <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+        <div class="flex items-center justify-between">
+
+          <div class="flex items-center space-x-8">
+            <div class="shrink-0">
+              <a href="#" title="" class="">
+                <img class="block w-auto h-8 dark:hidden" src="https://padu.gov.my/_next/image?url=%2Fimages%2Fjata_negara.png&w=256&q=75" alt="">
+                <img class="hidden w-auto h-8 dark:block" src="https://padu.gov.my/_next/image?url=%2Fimages%2Fjata_negara.png&w=256&q=75" alt="">
+              </a>
+            </div>
+
+            <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+              <li>
+                <NuxtLink to="/">
+                  <a href="#" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                    Utama
+                  </a>
+                </NuxtLink>
+              </li>
+              <li class="shrink-0">
+                <NuxtLink to="/daftar">
+                  <a href="#" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                    Daftar
+                  </a>
+                </NuxtLink>
+              </li>
+              <li class="shrink-0">
+                <NuxtLink to="/pengguna">
+                  <a href="" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                    Pengguna
+                  </a>
+                </NuxtLink>
+              </li>
+              <li class="shrink-0">
+                <NuxtLink to="/login">
+                  <a href="#" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                    Login
+                  </a>
+                </NuxtLink>
+              </li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+    </nav>
     <slot />
   </div>
 </template>
 
-<style scoped>
-a { text-decoration: none; }
-</style>
+<style scoped></style>
 
 ```
 
@@ -134,7 +143,7 @@ a { text-decoration: none; }
 
 * Di browser layari pautan berikut **http://localhost:3000/**. Pastikan terdapat **Navigation Bar** di paparan seperti contoh berikut
 
-<img src="/uploads/4f4d63fe826124d42f2073c0c56515e9/image.png" width=700>
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/046751f296616ec4618d4075968b8a73/image.png" width=700>
 
 * Pastikan juga di pautan **http://localhost:3000/daftar** dan **http://localhost:3000/pengguna** terdapat **Navigation Bar**  di paparan.
 
