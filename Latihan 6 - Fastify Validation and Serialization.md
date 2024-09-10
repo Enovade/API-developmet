@@ -204,6 +204,31 @@ DELETE http://localhost:8090/salam/1001
 
 * Klik **Send Request** untuk **DELETE http://localhost:8090/salam/1001** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
+* Berikut adalah contoh kod
+
+```javascript
+
+app.route({
+      method: 'DELETE',
+      url: '/salam/:id',
+      schema: {
+        params: {
+          type: 'object',
+          required: ['id'],
+          properties: {
+            id: {
+              type: 'integer'
+            }
+          },
+        },
+      },
+      handler: function (request, reply) {
+        console.log(request.params)
+        reply.send({data: "Maklumat berjaya dihapuskan" })
+      }
+    })
+```
+
 
 # Langkah 2.0: Serialization
 ## Langkah 2.1: GET Serialization
