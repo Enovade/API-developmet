@@ -19,7 +19,18 @@ npx nuxi add page index
 
 * Buka fail **index.vue** yang baru diwujudkan, tukar maklumat **Page: index** kepada **Salam Malaysia Madani**, seperti contoh paparan berikut
 
-<img src="/uploads/1cefb2fa87603a95c63dda7ad79cef29/image.png" width=550>
+```vue
+<script setup lang="ts"></script>
+
+<template>
+  <div>
+    Salam Malaysia Madani
+  </div>
+</template>
+
+<style scoped></style>
+
+```
 
 * Simpan / **Save** fail **index.vue**
 
@@ -43,12 +54,6 @@ npm run dev
 
 * Di browser layari pautan berikut **http://localhost:3000/**
 
-* Berikut adalah contoh paparan jika berjaya
-
-<img src="/uploads/86ff6d181d72b6d82f96928ada6867c6/image.png" width=550>
-
-<hr>
-
 * Di aplikasi **Command Prompt**, taip **CTRL-C** untuk hentikan aplikasi.
 
 ## Langkah 1.1: Wujudkan fail Daftar menggunakan _Command Nuxi_
@@ -58,14 +63,23 @@ npm run dev
 ```
 npx nuxi add page daftar
 ```
-- **daftar** adalah nama fail - daftar.vue
+- **daftar** adalah nama fail - **daftar.vue**
 
 * Di **VS Code**, pastikan terdapat fail **daftar.vue** diwujudkan di dalam direktori **pages**
 
-
 * Buka fail **daftar.vue** yang baru diwujudkan, tukar maklumat **Page: index** kepada **Daftar Pengguna**, seperti contoh paparan berikut
 
-<img src="/uploads/714f1506646322d560a97cece02266b9/image.png" width=550>
+```vue
+<script setup lang="ts"></script>
+
+<template>
+  <div>
+    Daftar Pengguna
+  </div>
+</template>
+
+<style scoped></style>
+```
 
 * Simpan / **Save** fail **daftar.vue**
 
