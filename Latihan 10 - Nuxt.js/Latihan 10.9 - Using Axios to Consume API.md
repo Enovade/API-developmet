@@ -36,7 +36,7 @@ npm install axios
 
 * Buka fail **pengguna.vue**. Padam kod sedia ada, salin dan tampal kod berikut
 
-```
+```js
 <script setup lang="ts">
 
 import axios from 'axios';
@@ -162,7 +162,7 @@ npm run dev
 
 * Di **VSCode terminal**, taip **CTRL_C** untuk hentikan aplikasi Nuxt.
 
-# Langkah 4.0: Dapatkan data dari API menggunakan Axios - Kaedah Axios Instance Custom Config
+# Langkah 5.0: Dapatkan data dari API menggunakan Axios - Kaedah Axios Instance Custom Config
 
 * Buka fail **pengguna.vue**. Padam kod sedia ada, salin dan tampal kod berikut
 
