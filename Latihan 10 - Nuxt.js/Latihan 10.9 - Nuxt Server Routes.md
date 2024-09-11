@@ -85,7 +85,7 @@ GET http://localhost:3000/api/salam
 
 * Simpan / **Save** fail **uji.http**
 
-* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode.
 
 * Berikut adalah contoh paparan jika berjaya:
 
@@ -143,7 +143,7 @@ Content-Type: application/json
 
 * Simpan / **Save** fail **uji.http**
 
-* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode.
 
 * Berikut adalah contoh paparan jika berjaya:
 
@@ -203,3 +203,109 @@ DELETE http://localhost:8090/salam/?id=1001
 ```
 
 * Klik **Send Request** untuk **DELETE http://localhost:8090/salam/?id=1001** dan lihat maklumbalas di VSCode.
+
+
+# Langkah 2.0: Pembangunan Data Pengguna _API endpoints_ 
+Langkah ini adalah untuk konfigurasi _**Command Nuxi**_ untuk mewujudkan **API Endpoints** untuk **Data Pengguna** di aplikasi Nuxt.
+
+## Langkah 2.1: Penggunaan _GET Methods_
+
+* Di **Commmand Prompt** atau **Terminal**, taip kod berikut
+
+```bash
+npx nuxi add api pengguna/index.get
+```
+
+* Jika berjaya, buka **VSCode**, pastikan contoh paparan seperti berikut di direktori **server**
+
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/8f6866c9ca1c3cdba8eb6fccf0efff2e/image.png">
+
+* Buka fail **index.get.ts** di dalam direktori **pengguna** padam kod sedia ada, salin dan tampal kod berikut
+
+```
+export default defineEventHandler((event) => {
+  return {
+    salam: "Salam Warga JDN!!"
+  }
+})
+```
+* Simpan / **Save** fail **index.get.ts**
+
+* Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
+
+```
+npm run dev
+```
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+GET http://localhost:3000/api/pengguna
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
+
+* Berikut adalah contoh paparan jika berjaya:
+
+```json
+{
+  "salam": "Salam Warga JDN!!"
+}
+```
+
+## Langkah 2.2 - Latihan Penggunaan _POST Methods_
+Latihan ini adalah untuk konfigurasi _**Command Nuxi**_ untuk mewujudkan **POST API Endpoints** untuk **Data Pengguna** di aplikasi Nuxt.
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+POST http://localhost:3000/api/pengguna
+Content-Type: application/json
+
+{
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+}
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
+
+## Langkah 2.3 - Latihan Penggunaan _UPDATE Methods_
+Latihan ini adalah untuk konfigurasi _**Command Nuxi**_ untuk mewujudkan **UPDATE API Endpoints** untuk **Data Pengguna** di aplikasi Nuxt.
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+PUT http://localhost:3000/api/pengguna/?id=1001
+Content-Type: application/json
+
+{
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+}
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/pengguna/?id=1001** dan lihat maklumbalas di VSCode.
+
+## Langkah 2.4 - Latihan Penggunaan _DELETE Methods_
+Latihan ini adalah untuk konfigurasi _**Command Nuxi**_ untuk mewujudkan **DELETE API Endpoints** untuk **Data Pengguna** di aplikasi Nuxt.
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+DELETE http://localhost:3000/api/pengguna/?id=1001
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **DELETE http://localhost:3000/api/pengguna/?id=1001** dan lihat maklumbalas di VSCode.
