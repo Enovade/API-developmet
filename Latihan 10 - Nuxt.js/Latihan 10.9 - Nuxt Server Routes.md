@@ -107,7 +107,7 @@ npx nuxi add api salam.post
 
 * Jika berjaya, buka **VSCode**, pastikan contoh paparan seperti berikut di direktori **server**
 
-<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/564ed353db21a2b93065c910b6a0a4fb/image.png">
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/f77175f96277cd45996bcf946e1aff42/image.png">
 
 * Buka fail **salam.post.ts**, padam kod sedia ada, salin dan tampal kod berikut
 
@@ -149,7 +149,11 @@ Content-Type: application/json
 
 ```json
 {
-  "salam": "Salam Warga JDN!!"
+  "salam": "Salam Warga JDN!!",
+  "post": {
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+  }
 }
 ```
 
