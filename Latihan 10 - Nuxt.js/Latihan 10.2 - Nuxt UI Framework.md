@@ -168,6 +168,6 @@ npm run dev
 
 * Uji dengan layari laman **http://localhost:3000**
 
-* Di browser klik **Shift + Option + D** untuk buka paparan **Devtools**
+* Di browser klik **Shift + Option + D** untuk MacOS atau **Shift + Alt + D** untuk WIndows untuk buka paparan **Devtools**
 
 
