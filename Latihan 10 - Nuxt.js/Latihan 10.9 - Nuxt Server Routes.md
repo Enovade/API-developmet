@@ -48,7 +48,7 @@ npm run dev -- -o
 
 * Di ***Command Prompt***, taip **CTRL-C** untuk hentikan aplikasi Nuxt.
 
-## Langkah 2.0: Penggunaan _GET Methods_
+## Langkah 1.2: Penggunaan _GET Methods_
 
 * Di **Commmand Prompt** atau **Terminal**, taip kod berikut
 
@@ -86,6 +86,64 @@ GET http://localhost:3000/api/salam
 * Simpan / **Save** fail **uji.http**
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+
+* Berikut adalah contoh paparan jika berjaya:
+
+```json
+{
+  "salam": "Salam Warga JDN!!"
+}
+```
+
+* Di ***Command Prompt***, taip **CTRL-C** untuk hentikan aplikasi Nuxt.
+
+## Langkah 1.3: Penggunaan _POST Methods_
+
+* Di **Commmand Prompt** atau **Terminal**, taip kod berikut
+
+```bash
+npx nuxi add api salam.post
+```
+
+* Jika berjaya, buka **VSCode**, pastikan contoh paparan seperti berikut di direktori **server**
+
+<img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/564ed353db21a2b93065c910b6a0a4fb/image.png">
+
+* Buka fail **salam.post.ts**, padam kod sedia ada, salin dan tampal kod berikut
+
+```
+export default defineEventHandler( async (event) => {
+  const body = await readBody(event)
+  return {
+    salam: "Salam Warga JDN!!",
+    post: body
+  }
+})
+```
+* Simpan / **Save** fail **salam.post.ts**
+
+* Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
+
+```
+npm run dev
+```
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+POST http://localhost:3000/api/salam
+Content-Type: application/json
+
+{
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+}
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/salam** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 * Berikut adalah contoh paparan jika berjaya:
 
