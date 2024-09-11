@@ -166,7 +166,7 @@ npm run dev
 
 * Buka fail **pengguna.vue**. Padam kod sedia ada, salin dan tampal kod berikut
 
-```
+```js
 <script setup lang="ts">
 
 import axios from 'axios';
@@ -178,9 +178,9 @@ onMounted (() => {
 })
 
 async function getPengguna(){
-  await axios.get("http://latihan.cloud-connect.asia:8080/pengguna")
+  await axios.get("http://localhost:8090/pengguna")
   .then(function (response) {
-    console.log('getPengguna: response.data :>> ', response);
+    console.log('response.data :>> ', response);
   })
   .catch(error => {
     console.log('error.response :>> ', error);
@@ -191,7 +191,7 @@ async function dapatPengguna(){
   await axios ({
     // default method is 'get'
     method: 'get',
-    url: 'http://latihan.cloud-connect.asia:8080/pengguna'
+    url: 'http://localhost:8090/pengguna'
     }
   )
   .then(function (response) {
@@ -205,13 +205,11 @@ async function dapatPengguna(){
     console.log('error.response :>> ', error);
   })  
 }
-
-
 </script>
 
 <template>
   <div>
-    Page: pengguna
+    Senarai Pengguna
   </div>
 </template>
 
