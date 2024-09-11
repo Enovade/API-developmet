@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# Latihan 10.9: _Using Axios To Consume API_
+# Latihan 10.10: _Using Axios To Consume API_
 
 Latihan ini adalah untuk menunjukkan pemahaman penggunaan **Axios** dalam kaedah untuk membaca **API** dari sumber luar.
 <br>
@@ -8,7 +8,7 @@ Untuk maklumat lanjut rujuk pautan berikut:
 - [https://axios-http.com/](https://axios-http.com/)
 - [Axios Instance Custom Config](https://axios-http.com/docs/req_config) - kaedah yang flexible
 
-Latihan ini adalah sambungan dari latihan [Latihan 10.8: Environment Variables](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.8%20-%20Environment%20Variables.md)
+Latihan ini adalah sambungan dari latihan [Latihan 10.9: Nuxt Server Routes](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.9%20-%20Nuxt%20Server%20Routes.md)
 
 > Pra-syarat latihan: Pastikan Back-end API dari [Latihan 8 - Pembangunan API dari MySQL Database yang baru](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%208%20-%20Pembangunan%20API%20dari%20MySQL%20Database%20yang%20baru.md) berfungsi.
 
