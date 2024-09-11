@@ -10,6 +10,8 @@ Untuk maklumat lanjut rujuk pautan berikut:
 
 Latihan ini adalah sambungan dari latihan [Latihan 10.8: Environment Variables](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.8%20-%20Environment%20Variables.md)
 
+> Pra-syarat latihan: Pastikan Back-end API dari [Latihan 8 - Latihan 8: Pembangunan API dari MySQL Database yang baru](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%208%20-%20Pembangunan%20API%20dari%20MySQL%20Database%20yang%20baru.md) berfungsi.
+
 # Langkah 1.0: Konfigurasi Axios
 
 * Di **Command Prompt** atau **Terminal**, taip kod berikut untuk **install axios library**
@@ -74,7 +76,7 @@ npm run dev
 
 * Di internet browser, akses ke laman **Pengguna** dan **Right-Click -> Inspect -> Console** untuk lihat data seperti contoh paparan berikut
 
-> Sila ambil perhatian kepada maklumat berikut <img src="/uploads/95075b0a5e19faec1c7a320d4a50c433/image.png" width=300>
+> Sila ambil perhatian kepada maklumat berikut <img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/cfa73e65504f4daf8e89d8aaff42cc44/image.png" width=300>
 
 <img src="/uploads/2931e7baceed9245bb34f1df97327085/image.png" width=700>
 
