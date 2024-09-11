@@ -1,6 +1,6 @@
 [[_TOC_]]
 
-# Latihan 1: Nuxt 3
+# Latihan 10.1: Nuxt 3
 Latihan ini adalah untuk menunjukkan pemahaman membangunkan aplikasi web atau website menggunakan **Nuxt 3 Framework**. 
 
 # Langkah 1.0: Penyediaan Persekitaran Projek
