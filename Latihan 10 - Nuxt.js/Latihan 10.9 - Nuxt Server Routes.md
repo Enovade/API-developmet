@@ -158,3 +158,48 @@ Content-Type: application/json
 ```
 
 * Di ***Command Prompt***, taip **CTRL-C** untuk hentikan aplikasi Nuxt.
+
+## Langkah 1.4 - Latihan Penggunaan _PUT Methods_
+
+* Latihan ini adalah untuk membangunkan **_UPDATE API_** dengan menggunakan **Nuxt Server Routes**
+
+* Wujudkan fail **salam.put**. Gunakan **const query = getQuery(event)** untuk **query** serta gunakan **const body = await readBody(event)** untuk **body** untuk menghantar data dan **{ data: "Maklumat berjaya dikemaskini" }** untuk maklumbalas.
+
+> Rujuk pautan ini https://nuxt.com/docs/guide/directory-structure/server#body-handling untuk **Body / Post Handling**
+
+> Rujuk pautan ini https://nuxt.com/docs/guide/directory-structure/server#query-parameters untuk **Query Parameters**
+
+* Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
+
+```
+###
+PUT http://localhost:3000/api/salam/?id=1001
+Content-Type: application/json
+
+{
+    "nama": "Hanafiah",
+    "emel": "hanafiah@cloud-connect.asia"
+}
+```
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/salam/?id=1001** dan lihat maklumbalas di VSCode.
+
+
+## Langkah 1.5 - Latihan _DELETE API for MySQL_
+
+* Latihan ini adalah untuk membangunkan **DELETE API_** dengan menggunakan **Nuxt Server Routes**
+
+* Wujudkan fail **salam.delete**. Gunakan **const query = getQuery(event)** untuk **query** untuk menghantar data dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
+
+> Gunakan fungsi Prisma berikut - **prisma.pengguna.delete({ where: { id: request.params.id }})**
+
+
+* Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
+
+```
+###
+DELETE http://localhost:8090/salam/?id=1001
+
+```
+
+* Klik **Send Request** untuk **DELETE http://localhost:8090/salam/?id=1001** dan lihat maklumbalas di VSCode.
