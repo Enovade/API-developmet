@@ -46,7 +46,7 @@ export default defineNuxtConfig({
 
 * Buka fail **index.vue** di dalam direktori **pages**, padam kod sedia ada, salin dan tampal kod berikut
 
-```
+```vue
 <script setup>
 import { useConfigStore } from '~~/stores/config';
 
