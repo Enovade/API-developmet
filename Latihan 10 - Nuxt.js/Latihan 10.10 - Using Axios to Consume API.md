@@ -318,6 +318,36 @@ content-type: application/json
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
 
+* Berikut adalah contoh kod
+
+```ts
+import axios from "axios"
+export default defineEventHandler(async (event) => {
+  const body = await readBody(event)
+  // const myData = {
+  //   nama: body.nama,
+  //   email: body.email,
+  //   alamat: body.alamat,
+  //   daerah: body.daerah,
+  //   negeri: body.negeri
+  // }
+  const result = await axios.post("http://127.0.0.1:8090/pengguna", body)
+  .then(function (response) {
+    return response.data
+  })
+  .catch(error => {
+    console.log('error.response :>> ', error);
+  })
+
+  return {
+    salam: "Salam Warga JDN!!",
+    data: result
+  }
+
+})
+
+```
+
 ## Langkah 6.3 - Latihan Penggunaan _UPDATE Methods_
 Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk mengemaskini data ke **Pengguna API Endpoints** menggunakan **PUT Methods**
 
