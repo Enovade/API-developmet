@@ -433,3 +433,17 @@ export default defineEventHandler(async (event) => {
 
 ```
 
+# Latihan 7.0: Tambah data baru dari Laman Daftar
+Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk hantar data ke **Pengguna API Endpoints** menggunakan **POST Methods** melalui Laman Daftar
+
+# Langkah 8.0: Penggunaan _DataTable Components_
+
+Latihan ini akan menggunakan **vue3-easy-data-table DataTable components** dari https://hc200ok.github.io/vue3-easy-data-table-doc/
+
+* Taip kod berikut untuk **install** **vue3-easy-data-table DataTable components**
+
+```
+npm install vue3-easy-data-table
+```
+
+* 
