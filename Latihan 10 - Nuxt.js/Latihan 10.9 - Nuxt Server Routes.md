@@ -191,8 +191,7 @@ Content-Type: application/json
 
 * Wujudkan fail **salam.delete**. Gunakan **const query = getQuery(event)** untuk **query** untuk menghantar data dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
 
-> Gunakan fungsi Prisma berikut - **prisma.pengguna.delete({ where: { id: request.params.id }})**
-
+> Rujuk pautan ini https://nuxt.com/docs/guide/directory-structure/server#query-parameters untuk **Query Parameters**
 
 * Buka fail **uji.http** untuk uji aplikasi. Tambah kod berikut di akhir fail
 
