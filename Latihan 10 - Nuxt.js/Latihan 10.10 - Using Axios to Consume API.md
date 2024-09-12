@@ -553,6 +553,8 @@ import axios from 'axios'
 
 # Langkah 8.0: Penggunaan _DataTable Components_
 
+Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk akses data dari **Pengguna API Endpoints** menggunakan **GET Methods** melalui Laman Pengguna
+
 Latihan ini akan menggunakan **vue3-easy-data-table DataTable components** dari https://hc200ok.github.io/vue3-easy-data-table-doc/
 
 * Taip kod berikut untuk **install** **vue3-easy-data-table DataTable components**
@@ -561,4 +563,75 @@ Latihan ini akan menggunakan **vue3-easy-data-table DataTable components** dari 
 npm install vue3-easy-data-table
 ```
 
-* 
+* Berikut adalah contoh kod **pengguna.vue**
+
+```vue
+<script setup lang="ts">
+
+import Vue3EasyDataTable from 'vue3-easy-data-table';
+import 'vue3-easy-data-table/dist/style.css';
+import axios from 'axios';
+
+const searchField = ["nama", "alamat","daerah","negeri"];
+const searchValue = ref();
+const loading =ref(true)
+
+  const headers = [
+    { text: "id", value: "id" },
+    { text: "Nama", value: "nama", sortable: true },
+    { text: "Emel", value: "email", sortable: true },
+    { text: "Alamat", value: "alamat", sortable: true },
+    { text: "Daerah", value: "daerah", sortable: true },
+    { text: "Negeri", value: "negeri", sortable: true },
+    { text: "Tindakan", value: "action" },
+  ]
+
+  let items = ref([])
+
+  onMounted (() => {
+    getPengguna()
+  })
+
+  async function getPengguna(){
+    await axios.get("/api/pengguna")
+    .then(function (response) {
+      loading.value = false
+      console.log('response.data :>> ', response.data.senarai);
+      items.value = response.data.senarai
+    })
+    .catch(error => {
+      loading.value = false
+      console.log('error.response :>> ', error);
+    })  
+  }
+
+
+</script>
+
+<template>
+  <div>
+    Senarai Pengguna
+    <Vue3EasyDataTable
+        :headers="headers"
+        :items="items"
+        :search-field="searchField"
+        :search-value="searchValue"
+        show-index
+        :loading="loading"
+      >
+        <template #loading>
+          <img
+            src="https://i.pinimg.com/originals/94/fd/2b/94fd2bf50097ade743220761f41693d5.gif"
+            style="width: 100px; height: 80px;"
+          />
+        </template>
+        
+      </Vue3EasyDataTable>
+
+  </div>
+</template>
+
+<style scoped></style>
+
+```
+
