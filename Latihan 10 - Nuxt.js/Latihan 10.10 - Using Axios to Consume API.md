@@ -318,7 +318,7 @@ content-type: application/json
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
 
-* Berikut adalah contoh kod
+* Berikut adalah contoh kod **index.post.ts**
 
 ```ts
 import axios from "axios"
@@ -368,7 +368,7 @@ Content-Type: application/json
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>** dan lihat maklumbalas di VSCode.
 
-* Berikut adalah contoh kod
+* Berikut adalah contoh kod **index.put.ts**
 
 ```ts
 import axios from 'axios'
@@ -408,4 +408,28 @@ DELETE http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>
 * Simpan / **Save** fail **uji.http**
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>** dan lihat maklumbalas di VSCode.
+
+* Berikut adalah contoh kod **index.delete.ts**
+
+```ts
+import axios from 'axios'
+export default defineEventHandler(async (event) => {
+
+  const queryid = await getQuery(event)
+
+  const result = await axios.delete("http://127.0.0.1:8090/pengguna/" + queryid.id)
+  .then(function (response) {
+    return response.data
+  })
+  .catch(error => {
+    console.log('error.response :>> ', error);
+  })
+
+  return {
+    data: "Maklumat berjaya dihapuskan"
+  }
+
+})
+
+```
 
