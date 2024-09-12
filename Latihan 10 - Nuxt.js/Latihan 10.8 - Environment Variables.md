@@ -14,9 +14,9 @@ Latihan ini adalah sambungan dari latihan [Latihan 10.7: State Management with P
 * Di aplikasi **VS Code**, wujudkan fail **.env**, salin dan tampal kod berikut
 
 ```
-identifier=developer
-password=Pentadbir123
-rahsia=password123
+IDENTIFIER=developer
+PASSWORD=Pentadbir123
+RAHSIA=password123
 ```
 
 * Simpan / save fail **.env**
@@ -33,10 +33,10 @@ export default defineNuxtConfig({
   modules: ['@bootstrap-vue-next/nuxt', '@nuxt/icon', "@pinia/nuxt"],
   css: ['bootstrap/dist/css/bootstrap.min.css'],
   runtimeConfig: {
-    rahsia: process.env.rahsia,
+    rahsia: process.env.RAHSIA,
     public: {
-        identifier: process.env.identifier,
-        password: process.env.password
+        identifier: process.env.IDENTIFIER,
+        password: process.env.PASSWORD
     }
   },
 })
