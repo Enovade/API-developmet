@@ -184,6 +184,23 @@ Content-Type: application/json
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/salam/?id=1001** dan lihat maklumbalas di VSCode.
 
+* Berikut adalah contoh kod **salam.put.ts**
+
+```ts
+export default defineEventHandler(async (event) => {
+  const queryid = await getQuery(event)
+  const body = await readBody(event)
+  return {
+    data: "Maklumat berjaya dikemaskini",
+    id: queryid.id,
+    nama: body.nama,
+    email: body.emel
+  }
+
+})
+
+```
+
 
 ## Langkah 1.5 - Latihan _DELETE API for MySQL_
 
@@ -203,6 +220,19 @@ DELETE http://localhost:3000/api/salam/?id=1001
 
 * Klik **Send Request** untuk **DELETE http://localhost:8090/salam/?id=1001** dan lihat maklumbalas di VSCode.
 
+* Berikut adalah contoh kod **salam.delete.ts**
+
+```ts
+export default defineEventHandler(async (event) => {
+  const queryid = await getQuery(event)
+  return {
+    data: "Maklumat berjaya dihapuskan",
+    id: queryid.id
+  }
+
+})
+
+```
 
 # Langkah 2.0: Pembangunan Data Pengguna _API endpoints_ 
 Langkah ini adalah untuk konfigurasi _**Command Nuxi**_ untuk mewujudkan **API Endpoints** untuk **Data Pengguna** di aplikasi Nuxt.
