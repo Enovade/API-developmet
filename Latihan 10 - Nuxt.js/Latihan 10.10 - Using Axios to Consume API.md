@@ -232,4 +232,13 @@ npm run dev
 
 * Di **VSCode terminal**, taip **CTRL_C** untuk hentikan aplikasi Nuxt.
 
+# Langkah 6.0: Penggunaan Nuxt Server Routes dengan Axios
+Langkah ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk akses data dari **Pengguna API Endpoints**
+
+Untuk langkah ini, sila rujuk latihan [Latihan 10 - Langkah 2.0: Pembangunan Data Pengguna Api Endpoints](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.9%20-%20Nuxt%20Server%20Routes.md#langkah-20-pembangunan-data-pengguna-api-endpoints)
+
+
+## Langkah 6.1: 
+
+* Buka fail **pengguna.vue**. Padam kod sedia ada, salin dan tampal kod berikut
 
