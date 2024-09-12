@@ -338,3 +338,28 @@ DELETE http://localhost:3000/api/pengguna/?id=1001
 * Simpan / **Save** fail **uji.http**
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **DELETE http://localhost:3000/api/pengguna/?id=1001** dan lihat maklumbalas di VSCode.
+
+* Berikut adalah contoh kod
+
+```ts
+
+import axios from 'axios'
+export default defineEventHandler(async (event) => {
+
+  const queryid = await getQuery(event)
+
+  const result = await axios.delete("http://127.0.0.1:8090/pengguna/" + queryid.id)
+  .then(function (response) {
+    return response.data
+  })
+  .catch(error => {
+    console.log('error.response :>> ', error);
+  })
+
+  return {
+    data: "Maklumat berjaya dihapuskan"
+  }
+
+})
+
+```
