@@ -28,16 +28,28 @@ RAHSIA=password123
 ```
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js',
+          type: 'text/javascript',
+          defer: true
+        }
+      ]
+    }
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@bootstrap-vue-next/nuxt', '@nuxt/icon', "@pinia/nuxt"],
-  css: ['bootstrap/dist/css/bootstrap.min.css'],
+  css: ['~/assets/css/main.css'],
+  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
   runtimeConfig: {
     rahsia: process.env.RAHSIA,
     public: {
         identifier: process.env.IDENTIFIER,
         password: process.env.PASSWORD
     }
+
   },
 })
 ```
