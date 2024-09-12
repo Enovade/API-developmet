@@ -228,6 +228,7 @@ npm run dev
 
 > Sila ambil perhatian kepada maklumat yang di paparkan
 
+
 <img src="https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/0bfdd00b46d9a29d020ab7acefa1718e/image.png" width=700>
 
 * Di **VSCode terminal**, taip **CTRL_C** untuk hentikan aplikasi Nuxt.
