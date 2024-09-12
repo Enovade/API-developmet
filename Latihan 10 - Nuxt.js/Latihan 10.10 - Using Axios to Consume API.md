@@ -368,6 +368,33 @@ Content-Type: application/json
 
 * Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>** dan lihat maklumbalas di VSCode.
 
+* Berikut adalah contoh kod
+
+```ts
+import axios from 'axios'
+export default defineEventHandler(async (event) => {
+  const queryid = await getQuery(event)
+  const body = await readBody(event)
+
+  const result = await axios.put("http://127.0.0.1:8090/pengguna/" + queryid.id, body)
+  .then(function (response) {
+    return response.data
+  })
+  .catch(error => {
+    console.log('error.response :>> ', error);
+  })
+
+  return {
+    data: "Maklumat berjaya dikemaskini",
+    id: queryid.id,
+    nama: body.nama,
+    email: body.emel
+  }
+
+})
+
+```
+
 ## Langkah 6.4 - Latihan Penggunaan _DELETE Methods_
 Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk menghapuskan data di **Pengguna API Endpoints** menggunakan **PUT Methods**
 
