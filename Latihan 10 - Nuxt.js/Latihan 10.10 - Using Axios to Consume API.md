@@ -235,10 +235,120 @@ npm run dev
 # Langkah 6.0: Penggunaan Nuxt Server Routes dengan Axios
 Langkah ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk akses data dari **Pengguna API Endpoints**
 
-Untuk langkah ini, sila rujuk latihan [Latihan 10 - Langkah 2.0: Pembangunan Data Pengguna Api Endpoints](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.9%20-%20Nuxt%20Server%20Routes.md#langkah-20-pembangunan-data-pengguna-api-endpoints)
+Untuk langkah ini, sila rujuk latihan [Latihan 10.9 - Langkah 2.0: Pembangunan Data Pengguna Api Endpoints](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.9%20-%20Nuxt%20Server%20Routes.md#langkah-20-pembangunan-data-pengguna-api-endpoints)
 
 
-## Langkah 6.1: 
+## Langkah 6.1: Penggunaan _GET Methods_ 
+Langkah ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk akses data dari **Pengguna API Endpoints** menggunakan **GET Methods**
 
-* Buka fail **pengguna.vue**. Padam kod sedia ada, salin dan tampal kod berikut
+* Buka fail **pengguna/index.get.ts**. Padam kod sedia ada, salin dan tampal kod berikut
+
+```ts
+import axios from "axios"
+export default defineEventHandler( async (event) => {
+  const result = await axios.get("http://127.0.0.1:8090/pengguna")
+  .then(function (response) {
+    return response.data
+  })
+  .catch(error => {
+    console.log('error.response :>> ', error);
+  })  
+  return {
+    senarai: result
+  }
+})
+```
+
+* Simpan / **Save** fail **pengguna/index.get.ts**
+
+* Di ***Command Prompt*** taip kod seperti berikut untuk buka aplikasi Nuxt
+
+```
+npm run dev
+```
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+GET http://localhost:3000/api/pengguna
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **GET http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
+
+* Berikut adalah contoh paparan jika berjaya:
+
+```json
+{
+  "senarai": [
+    {
+      "id": 1,
+      "nama": "jdn01",
+      "email": "jpn@cloud-connect.asia",
+      "alamat": "Everly Putrajaya",
+      "daerah": "Putrajaya",
+      "negeri": "Wilayah Persekutuan Putrajaya"
+    }
+  ]
+}
+```
+
+## Langkah 6.2 - Latihan Penggunaan _POST Methods_
+Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk hantar data ke **Pengguna API Endpoints** menggunakan **POST Methods**
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+POST http://localhost:3000/api/pengguna
+content-type: application/json
+
+{
+    "nama": "jdn",
+    "email": "jdn@cloud-connect.asia",
+    "alamat": "Everly Putrajaya",
+    "daerah": "Putrajaya",
+    "negeri": "Wilayah Persekutuan Putrajaya"
+}
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **POST http://localhost:3000/api/pengguna** dan lihat maklumbalas di VSCode.
+
+## Langkah 6.3 - Latihan Penggunaan _UPDATE Methods_
+Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk mengemaskini data ke **Pengguna API Endpoints** menggunakan **PUT Methods**
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+PUT http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>
+Content-Type: application/json
+
+{
+    "email": "b@a.com",
+    "alamat": "kg baru majidee"
+}
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **PUT http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>** dan lihat maklumbalas di VSCode.
+
+## Langkah 6.4 - Latihan Penggunaan _DELETE Methods_
+Latihan ini adalah untuk menggunakan **Nuxt Server Routes** dengan **Axios** untuk menghapuskan data di **Pengguna API Endpoints** menggunakan **PUT Methods**
+
+* Buka fail **uji.http**, salin dan tampal kod berikut
+
+```
+###
+DELETE http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>
+```
+
+* Simpan / **Save** fail **uji.http**
+
+* Di fail **uji.http** untuk uji aplikasi. Klik **Send Request** untuk **http://localhost:3000/api/pengguna/?id=<id yang dijana sebelum ini>** dan lihat maklumbalas di VSCode.
 
