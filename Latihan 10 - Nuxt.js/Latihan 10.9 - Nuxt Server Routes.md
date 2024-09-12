@@ -198,7 +198,7 @@ Content-Type: application/json
 
 ```
 ###
-DELETE http://localhost:8090/salam/?id=1001
+DELETE http://localhost:3000/api/salam/?id=1001
 
 ```
 
