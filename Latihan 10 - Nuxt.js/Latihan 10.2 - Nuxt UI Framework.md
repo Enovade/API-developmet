@@ -9,6 +9,8 @@ Latihan ini adalah sambungan dari latihan [Latihan 10.1: Pengenalan Nuxt 3](http
 
 * At VSCode, add **Tailwind CSS IntelliSense** extension
 
+<img src='https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/uploads/80a35da2214ab8b1cc4d79f44b4bb71d/image.png' width=400>
+
 # Langkah 1.0: Penggunaan Flowbite TailwindCSS UI Framework
 Langkah ini adalah untuk menggunakan **Flowbite** sebagai **UI Framework**
 
