@@ -7,6 +7,8 @@ Untuk maklumat lanjut boleh layari https://flowbite.com/
 
 Latihan ini adalah sambungan dari latihan [Latihan 10.1: Pengenalan Nuxt 3](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%2010%20-%20Nuxt.js/Latihan%2010.1%20-%20Pengenalan%20Nuxt%203.md)
 
+* At VSCode, add **Tailwind CSS IntelliSense** extension
+
 # Langkah 1.0: Penggunaan Flowbite TailwindCSS UI Framework
 Langkah ini adalah untuk menggunakan **Flowbite** sebagai **UI Framework**
 
