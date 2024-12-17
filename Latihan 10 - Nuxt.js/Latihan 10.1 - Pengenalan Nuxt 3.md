@@ -6,7 +6,7 @@ Latihan ini adalah untuk menunjukkan pemahaman membangunkan aplikasi web atau we
 # Langkah 1.0: Penyediaan Persekitaran Projek
 
 ## Langkah 1.1: _Install Vue.js devtools_
-* Di browser, akses ke https://devtools.vuejs.org/ dan klik **Install now**.
+* Di browser, akses ke https://devtools.vuejs.org/ dan klik **Get Started -> Installation -> Chrome extension**.
 * Pilih **Install on Chrome** jika menggunakan **Chrome browser**.
 * Klik **Add to Chrome** di laman **Vue.js devtools** dan klik **Add extension**
 
