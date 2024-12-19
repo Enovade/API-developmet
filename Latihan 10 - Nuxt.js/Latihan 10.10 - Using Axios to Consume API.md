@@ -110,16 +110,9 @@ export async function build (opts = {}) {
     origin: "*"
   })
 
+
   app.register(autoload, {
     dir: join(__dirname, 'routes')
-  })
-
-  app.register(autoload, {
-    dir: join(__dirname, 'routes/pengguna')
-  })
-
-  app.register(autoload, {
-    dir: join(__dirname, 'routes/salam')
   })
 
   app.get('/error', async (request, reply) => {
