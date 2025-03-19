@@ -98,7 +98,7 @@ export default async function (app, opts = {}) {
           }
         },
         handler: function (request, reply) {
-          const mymesej = request.body.nama + '' + request.body.emel
+          const mymesej = request.body.nama + ' - ' + request.body.emel
           console.log(request.body)
           reply.send({ data: mymesej })
         }
