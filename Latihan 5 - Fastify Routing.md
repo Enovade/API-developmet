@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 5: Fastify Routing
 Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Routing** untuk **Fastify Framework**
 
