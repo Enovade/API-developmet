@@ -6,7 +6,7 @@ Jika hendak menyediakan persekitaran MySQL database untuk di komputer anda, sila
 
 Sila layari https://www.prisma.io/ untuk maklumat lanjut 
 
-Latihan ini adalah sambungan dari latihan [Latihan 6: Fastify Validation and Serialization](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%206%20-%20Fastify%20Validation%20and%20Serialization.md)
+Latihan ini adalah sambungan dari latihan [Latihan 6: Fastify Validation and Serialization](https://github.com/Enovade/API-developmet/blob/master/Latihan%206%20-%20Fastify%20Validation%20and%20Serialization.md)
 
 
 # Langkah 1.0: _Install Visual Studio Code Prisma Extension_
