@@ -6,7 +6,7 @@ Jika hendak menyediakan persekitaran MySQL database untuk di komputer anda, sila
 
 Sila layari https://www.prisma.io/ untuk maklumat lanjut 
 
-Latihan ini adalah sambungan dari latihan [Latihan 7: Pembangunan API dari MySQL Database sediada](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%207%20-%20Pembangunan%20API%20dari%20MySQL%20Database%20sediada.md)
+Latihan ini adalah sambungan dari latihan [Latihan 7: Pembangunan API dari MySQL Database sediada](https://github.com/Enovade/API-developmet/blob/master/Latihan%207%20-%20Pembangunan%20API%20dari%20MySQL%20Database%20sediada.md)
 
 
 # Langkah 1.0: _Connecting to new MySQL Database using Prisma_
