@@ -3,7 +3,7 @@ Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Logging** menggunak
 
 Sila layari https://getpino.io/ untuk maklumat lanjut
 
-Latihan ini adalah sambungan dari latihan [Latihan 1: Pengenalan Fastify](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%201%20-%20Pengenalan%20Fastify.md)
+Latihan ini adalah sambungan dari latihan [Latihan 1: Pengenalan Fastify](https://github.com/Enovade/API-developmet/blob/master/Latihan%201%20-%20Pengenalan%20Fastify.md)
 
 # Langkah 1.0: Enabling Fastify Logging
 Langkah ini adalah untuk menggunakan **logging** untuk **Fastify Framework**
