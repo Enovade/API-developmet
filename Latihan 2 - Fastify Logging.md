@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 2: Fastify Logging
 Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Logging** menggunakan **Pino** untuk **Fastify Framework**
 
