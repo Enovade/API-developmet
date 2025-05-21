@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 6: Fastify Validation and Serialization
 Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Validation and Serialization** untuk **Fastify Framework**
 
