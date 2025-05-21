@@ -3,7 +3,7 @@ Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Environment Variabl
 
 Sila layari https://github.com/motdotla/dotenv untuk maklumat lanjut
 
-Latihan ini adalah sambungan dari latihan [Latihan 2: Fastify Logging](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%202%20-%20Fastify%20Logging.md)
+Latihan ini adalah sambungan dari latihan [Latihan 2: Fastify Logging](https://github.com/Enovade/API-developmet/blob/master/Latihan%202%20-%20Fastify%20Logging.md)
 
 # Langkah 1.0: Tetapan Environment Variables
 
