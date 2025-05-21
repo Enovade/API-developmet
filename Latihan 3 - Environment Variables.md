@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 3: Environment Variables
 Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Environment Variables** untuk **Fastify Framework**
 
