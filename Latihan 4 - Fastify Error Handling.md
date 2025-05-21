@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 4: Error Handling
 Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Error Handling** untuk **Fastify Framework**
 
