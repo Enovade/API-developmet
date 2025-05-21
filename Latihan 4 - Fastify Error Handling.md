@@ -3,7 +3,7 @@ Latihan ini adalah untuk menunjukkan pemahaman menggunakan **Error Handling** un
 
 Sila layari https://fastify.dev/docs/latest/Reference/Errors/ untuk maklumat lanjut 
 
-Latihan ini adalah sambungan dari latihan [Latihan 3: Environment Variables](https://code.cloud-connect.asia/jdn/latihan-aplikasi-moden/-/blob/master/Latihan%203%20-%20Environment%20Variables.md)
+Latihan ini adalah sambungan dari latihan [Latihan 3: Environment Variables](https://github.com/Enovade/API-developmet/blob/master/Latihan%203%20-%20Environment%20Variables.md)
 
 # Langkah 1.0: Tetapan Error Handling
 
