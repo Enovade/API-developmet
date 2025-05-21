@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 1: Pengenalan Fastify
 Latihan ini adalah untuk menunjukkan pemahaman membangunkan API menggunakan **_Fastify Framework_**
 
