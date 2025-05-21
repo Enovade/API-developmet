@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Latihan 8: Pembangunan API dari MySQL Database yang baru
 Latihan ini adalah untuk menunjukkan pemahaman membangunkan MySQL API dari MySQL Database yang baru menggunakan **_PRISMA ORM and Fastify Framework_**. Untuk latihan ini MySQL database server akan disediakan di persekitaran pengkomputeran awan. 
 
