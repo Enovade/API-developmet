@@ -451,28 +451,10 @@ app.route({
 
 > Gunakan fungsi Prisma berikut - **prisma.pengguna.delete({ where: { id: request.params.id }})**
 
-```
-app.route({
-        method: 'DELETE',
-        url: '/pengguna/:id',
-        schema: {
-            params: {
-                type: 'object',
-                required: ['id'],
-                properties: {
-                id: {
-                    type: 'integer'
-                }
-                },
-            },
-            
-        },
-        handler: async function (request, reply) {
-            const jawapan = await prisma.pengguna.delete({ where: { id: request.params.id }})
-            console.log(jawapan)
-            reply.send(jawapan)
-        }
-        })
+* Berikut adalah contoh code
+
+```javascript
+
 ```
 
 
