@@ -45,9 +45,9 @@ npm run dev
 
 * Buka fail **uji.http** untuk uji aplikasi. Salin dan tampal kod berikut di akhir fail
 
-```
+```text
 ###
-GET http://localhost:8090/salam?mesej=Salam%20Malaysia%Madani
+GET http://localhost:8090/salam?mesej=Salam%20Malaysia%20Madani
 
 ```
 
