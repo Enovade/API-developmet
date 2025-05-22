@@ -50,9 +50,6 @@ GET http://localhost:8090
 ###
 GET http://localhost:8090/error
 
-###
-GET http://localhost:8090/error
-
 ```
 
 * Simpan / (_**Save**_) fail **uji.http**. Klik **Send Request** untuk **GET http://localhost:8090/error** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
