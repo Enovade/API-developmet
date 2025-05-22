@@ -75,7 +75,7 @@ DATABASE_URL="mysql://pentadbir:rahsia@167.71.217.175:3306/testdb"
 ```
 Nota:
 - pentadbir : adalah username untuk akses ke MySQL database
-- rahsia : adalah katalaulan untuk username root
+- rahsia : adalah katalaulan untuk username pentadbir
 - 167.71.217.175 : adalah database server URL atau IP address localhost / 127.0.0.1 jika dari komputer sendiri
 - 3306 : adalah port untuk MySQL server
 - testdb : adalah nama database
