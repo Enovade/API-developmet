@@ -399,13 +399,11 @@ content-type: application/json
 
 * Sila pastikan data yang dikemaskini tersenarai dalam database dengan membuat ujian seperti **Langkah 8.2**
 
-* Berikut adalah contoh kod
+* Berikut adalah contoh kod, tambah kod di **// UPDATE API**
 
 ```javascript
-import { PrismaClient }  from '@prisma/client';
-const prisma = new PrismaClient();
 
-export default async function (app, opts = {}) {
+// UPDATE API
  
 app.route({
     method: 'PUT',
