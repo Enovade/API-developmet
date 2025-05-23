@@ -438,8 +438,6 @@ app.route({
     }
     })
 
-  return app
-}
 
 ```
 
