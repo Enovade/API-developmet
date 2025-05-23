@@ -520,6 +520,22 @@ DELETE http://localhost:8090/pengguna/<id data yang baru dijana>
 
 
   // Latihan Carian - contains
+app.route({
+    method: 'GET',
+    url: '/pengguna/contains/:nama',
+    handler: async function (request, reply) {
+        let searchname = request.params.nama
+        const jawapan = await prisma.pengguna.findMany({
+            where: {
+              nama: {
+                contains: searchname,
+              },
+            },
+        })
+
+      reply.send(jawapan)
+    }
+  })
 
 
 ```
