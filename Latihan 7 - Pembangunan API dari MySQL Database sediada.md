@@ -445,7 +445,7 @@ app.route({
 
 * Langkah ini adalah untuk membangunkan _DELETE API for MySQL_ untuk membuang data di **table Pengguna**
 
-* Ubah kod di fail **salam.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
+* Ubah kod di fail **pengguna.js** untuk menghapuskan maklumat dengan menggunakan **DELETE Request**. Gunakan **params** untuk **schema validation** dan **{ data: "Maklumat berjaya dihapuskan" }** untuk maklumbalas.
 
 > Gunakan fungsi Prisma berikut - **prisma.pengguna.delete({ where: { id: request.params.id }})**
 
@@ -460,11 +460,11 @@ app.route({
 
 ```
 ###
-DELETE http://localhost:8090/salam/<id data yang baru dijana>
+DELETE http://localhost:8090/pengguna/<id data yang baru dijana>
 
 ```
 
-* Klik **Send Request** untuk **DELETE http://localhost:8090/salam/<id data yang baru dijana>** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
+* Klik **Send Request** untuk **DELETE http://localhost:8090/pengguna/<id data yang baru dijana>** dan lihat maklumbalas di VSCode dan **Command Prompt** atau **Terminal**
 
 * Sila pastikan data yang dihapuskan tiada dalam senarai dengan membuat ujian seperti **Langkah 8.2**
 
