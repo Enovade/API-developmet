@@ -452,7 +452,26 @@ app.route({
 * Berikut adalah contoh code
 
 ```javascript
-
+app.route({
+    method: 'DELETE',
+    url: '/pengguna/:id',
+    schema: {
+        params: {
+        type: 'object',
+        required: ['id'],
+            properties: {
+            id: {
+                type: 'integer'
+            }
+            },
+        },
+    },
+    handler: async function (request, reply) {
+        const jawapan = await prisma.pengguna.delete({ where: { id: request.params.id }})
+        console.log(jawapan)
+        reply.send({ data: "Maklumat berjaya dihapuskan" })
+    }
+    })
 ```
 
 
@@ -473,10 +492,6 @@ DELETE http://localhost:8090/pengguna/<id data yang baru dijana>
 * Berikut adalah contoh kod
 
 ```javascript
-import { PrismaClient }  from '@prisma/client';
-const prisma = new PrismaClient();
-
-export default async function (app, opts = {}) {
  
   // READ API
   app.route({
@@ -506,9 +521,6 @@ export default async function (app, opts = {}) {
 
   // Latihan Carian - contains
 
-
-  return app
-}
 
 ```
 
