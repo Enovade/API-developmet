@@ -386,11 +386,11 @@ content-type: application/json
 
 ```
 ###
-PUT http://localhost:8080/pengguna/<id data yang baru dijana>
+PUT http://localhost:8090/pengguna/<id data yang baru dijana>
 content-type: application/json
 
 {
-  "emel": "emel@baru.com
+  "email": "emel@baru.com
   "alamat": "Kg Nong Chik"
 }
 ```
