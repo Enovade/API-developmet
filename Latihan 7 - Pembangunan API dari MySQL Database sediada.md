@@ -222,7 +222,8 @@ Langkah ini adalah untuk membangunkan _Read API for MySQL_ untuk membaca data di
 * Wujudkan fail baru **pengguna.js** di direktori **routes**. Salin dan tampal kod berikut 
 
 ```
-import { PrismaClient }  from '@prisma/client';
+import { PrismaClient }  from '../generated/prisma/client.js'
+// use `prisma` in your application to read and write data in your DB';
 const prisma = new PrismaClient();
 
 export default async function (app, opts = {}) {
